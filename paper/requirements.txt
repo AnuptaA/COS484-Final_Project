@@ -1,0 +1,10 @@
+torch
+torchvision
+ftfy
+regex
+tqdm
+pillow
+numpy
+scipy
+jsonlines
+requests
