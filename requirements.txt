@@ -5,8 +5,11 @@ regex
 tqdm
 pillow
 numpy
+pandas
 scipy
 jsonlines
 requests
 # open_clip_torch
 transformers
+argparse
+seaborn

@@ -5,9 +5,39 @@ from PIL import Image
 import open_clip
 import json
 import os
+import sys
 import csv
+from argparse import ArgumentParser
 from scipy import spatial
 
+#-----------------------------------------------------------------------
+########################################################################
+
+MODEL_PARAMS = {
+    'siglip': {
+        'MODELS': ['ViT-B-16-SigLIP', 
+          'ViT-B-16-SigLIP-256', 
+          'ViT-B-16-SigLIP-i18n-256', 
+          'ViT-B-16-SigLIP-384', 
+          'ViT-B-16-SigLIP-512'],
+        'OUTPUT_DIRECTORY': 'SigLIP_results'
+    },
+    'siglip2': {
+        'MODELS': ['ViT-B-16-SigLIP2',
+          'ViT-B-16-SigLIP2-256', 
+          'ViT-B-16-SigLIP2-384',
+          'ViT-B-16-SigLIP2-512'],
+        'OUTPUT_DIRECTORY': 'SigLIP2_results'
+    },
+    'tulip': {
+        'MODELS': ['TULIP-B-16-224'],
+        'OUTPUT_DIRECTORY': 'TULIP_results'
+    }
+}
+PRETRAINED_DATASET = 'webli'
+SAMPLE_CSV_PATH = '100samples_with_FULL.csv'
+
+########################################################################
 #-----------------------------------------------------------------------
 
 def initialize_and_get_model(model_name, dataset):
@@ -33,7 +63,7 @@ def compute_und_scores(model_name, model, tokenizer, preprocess, device, csv_pat
     with open(csv_path, 'r') as f:
         content = f.readlines()
 
-    output_path = f'{out_dir}/clip_UND_scores_100_samples_{model_name}.csv'
+    output_path = f'{out_dir}/{model_name}_UND_scores_100_samples.csv'
     with open(output_path, 'w', newline='') as myoutput:
         myoutput.write('imageURL,imageID,original,und_quantity,und_location,und_object,und_gender-number,und_gender,und_full,sim_original,sim_quantity,sim_location,sim_object,sim_gender-number,sim_gender,sim_full\n')
         writer = csv.writer(myoutput)
@@ -92,12 +122,33 @@ def compute_und_scores(model_name, model, tokenizer, preprocess, device, csv_pat
             ])
 
     print(f"Finished PoC1 for {model_name}")
+    print()
 
 #-----------------------------------------------------------------------
     
-if __name__ == '__main__':
-    pretrained_models = open_clip.list_pretrained()
+def run_model(model_name):
+    model_info = MODEL_PARAMS[model_name]
+    for sub_model in model_info['MODELS']:
+        model, tokenizer, preprocess, device = initialize_and_get_model(sub_model, PRETRAINED_DATASET)
+        compute_und_scores(sub_model, model, tokenizer, preprocess, device, SAMPLE_CSV_PATH, model_info['OUTPUT_DIRECTORY'])
+        
+#-----------------------------------------------------------------------
 
-    print(f"There are {len(pretrained_models)} models available")
-    for i, model in enumerate(pretrained_models):
-        print(f"Model {i}: {model}")
+def main():
+    desc = "Helper module for running models to generate CSVs in the same"
+    desc += " format as main_PoC1.py"
+    model_help = "the model whose results are being generated"
+
+    parser = ArgumentParser(prog=f'{sys.argv[0]}', description=desc)
+    parser.add_argument('model', type=str.lower, choices=['siglip', 'siglip2', 'tulip'], help=model_help)
+
+    args = vars(parser.parse_args())
+    model = args.get('model')
+
+    print(f'Your selected model is {model}.')
+    run_model(model)
+    
+#-----------------------------------------------------------------------
+    
+if __name__ == '__main__':
+    main()
