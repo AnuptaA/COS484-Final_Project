@@ -55,7 +55,7 @@ def compute_sim_score(caption, model, tokenizer, image_features, device):
     tokens = tokenizer([caption]).to(device)
     with torch.no_grad():
         text_features = model.encode_text(tokens).cpu().numpy()[0]
-    return 1 - spatial.distance.cosine(image_features, text_features)
+    return max(1 - spatial.distance.cosine(image_features, text_features), 0)
 
 #-----------------------------------------------------------------------
 
