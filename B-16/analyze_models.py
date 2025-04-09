@@ -4,7 +4,7 @@ import os
 import sys
 from argparse import ArgumentParser
 import pandas as pd
-import numpy as np
+import matplotlib.pyplot as plt
 import seaborn as sns
 
 #----------------------------------------------------------------------#
@@ -23,7 +23,7 @@ OUTPUT_DIRECTORY = 'analysis'
     
 def get_csv_filenames(input_path):
     file_names = os.listdir(input_path)
-    return [(f'{input_path}/{file_name}', file_name[:-4]) for file_name in file_names if file_name.endswith('.csv')]
+    return [(f'{input_path}/{file_name}', file_name[:-27]) for file_name in file_names if file_name.endswith('.csv')]
     
 #----------------------------------------------------------------------#
 
@@ -34,12 +34,17 @@ def analyze_model(model_name, results_dir):
     file_paths = get_csv_filenames(input_path)
 
     for csv_path, file_name in file_paths:
-        analysis_path = f'{results_dir}/{file_name}_results'
+        analysis_path = f'{results_dir}/{model_name}/{file_name}_results'
         sim_scores = pd.read_csv(csv_path).iloc[:,-7:]
 
+        plt.figure(figsize=(10, 6))
         violin_plot = sns.violinplot(data=sim_scores)
-        fig = violin_plot.get_figure()
+        plt.title(f'Violin Plot of Similarity Scores - {file_name}')
+        plt.ylabel('CLIPScore')
+        plt.xticks(rotation=45, ha='right')
+        plt.subplots_adjust(bottom=0.2)
 
+        fig = violin_plot.get_figure()
         fig.savefig(f'{analysis_path}.png')
 
 #----------------------------------------------------------------------#
