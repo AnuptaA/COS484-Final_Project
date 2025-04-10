@@ -9,6 +9,7 @@ import sys
 import csv
 from argparse import ArgumentParser
 from scipy import spatial
+import numpy as np
 
 #-----------------------------------------------------------------------
 ########################################################################
@@ -55,7 +56,10 @@ def compute_sim_score(caption, model, tokenizer, image_features, device):
     tokens = tokenizer([caption]).to(device)
     with torch.no_grad():
         text_features = model.encode_text(tokens).cpu().numpy()[0]
-    return max(1 - spatial.distance.cosine(image_features, text_features), 0)
+        text_features = text_features / np.linalg.norm(text_features)
+
+    # spatial distance cosine = 1 - cos(u^T v) => do 1 - spatial distance cosine
+    return 100 * max(1 - spatial.distance.cosine(image_features, text_features), 0)
 
 #-----------------------------------------------------------------------
 
@@ -93,6 +97,7 @@ def compute_und_scores(model_name, model, tokenizer, preprocess, device, csv_pat
 
             with torch.no_grad():
                 image_features = model.encode_image(image).cpu().numpy()[0]
+                image_features = image_features / np.linalg.norm(image_features)
 
                 sim0 = compute_sim_score(orig_caption, model, tokenizer, image_features, device)
                 sim1 = compute_sim_score(und_some, model, tokenizer, image_features, device)
@@ -112,13 +117,20 @@ def compute_und_scores(model_name, model, tokenizer, preprocess, device, csv_pat
                 und_they,
                 und_person,
                 und_full,
-                round(sim0 * 2.5, 4),
-                round(sim1 * 2.5, 4), 
-                round(sim2 * 2.5, 4),
-                round(sim3 * 2.5, 4), 
-                round(sim4 * 2.5, 4), 
-                round(sim5 * 2.5, 4), 
-                round(sim6 * 2.5, 4)
+                sim0,
+                sim1,
+                sim2,
+                sim3,
+                sim4,
+                sim5,
+                sim6
+                # round(sim0 * 2.5, 4),
+                # round(sim1 * 2.5, 4), 
+                # round(sim2 * 2.5, 4),
+                # round(sim3 * 2.5, 4), 
+                # round(sim4 * 2.5, 4), 
+                # round(sim5 * 2.5, 4), 
+                # round(sim6 * 2.5, 4)
             ])
 
     print(f"Finished PoC1 for {model_name}")
