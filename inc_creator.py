@@ -1,9 +1,14 @@
 import openai
 import requests
 import pandas as pd
+import os
+from dotenv import load_dotenv
 import time
 
-openai.api_key = '' # Set your OpenAI API key
+load_dotenv()
+
+openai.api_key = os.getenv('OPENAI_API_KEY')
+
 CATEGORIES = ["quantity","location","object","gender-number","gender","full"]
 
 def make_caption_incorrect(caption, category):
@@ -57,7 +62,7 @@ def make_caption_incorrect(caption, category):
 
 # train data pre-processing
 df = pd.read_csv('paper/clip_UND_scores_100_samples.csv')
-inc = df[["image_URL","image_ID","original"]]
+inc = df[["imageURL","imageID","original"]]
 
 # Iterate over each row in the DataFrame with a delay
 for index, row in inc.iterrows():
@@ -68,5 +73,6 @@ for index, row in inc.iterrows():
             inc.loc[index, ("inc_" + category)] = make_caption_incorrect(row['original'], category)
             print(inc.loc[index, ("inc_" + category)])
             time.sleep(1)  # Introduce a delay of 1 second
+    break
 
 inc.to_csv('INC_100_samples.csv', index=False)
