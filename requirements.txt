@@ -2,17 +2,18 @@ torch
 torchvision
 ftfy
 regex
-tqdm
+tqdm # fancy progress bars
 pillow
 numpy
 pandas
-scipy
+scipy # spatial distance cosine
 jsonlines
 requests
-# open_clip_torch
+open_clip_torch # for original paper
 transformers
 argparse
 seaborn
 matplotlib
 openai
 dotenv
+einops # for radio

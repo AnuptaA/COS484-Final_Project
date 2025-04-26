@@ -18,3 +18,8 @@
 not complete because of repo and data checkpoint issues)
 
 8. fun
+
+# UPDATE !!! If you're attempting to use RADIO
+1. Must use python version 3.10 (recreate venv using 3.10 i.e. `python3.10 -m venv /path/to/your/env` and run `pip install -r requirements.txt`)
+
+2. Run `/Applications/Python\ 3.10/Install\ Certificates.command` for torch.hub

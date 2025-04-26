@@ -10,6 +10,8 @@ import csv
 from argparse import ArgumentParser
 from scipy import spatial
 import numpy as np
+from torchvision.transforms.functional import pil_to_tensor
+from torch.nn import functional as F
 
 #-----------------------------------------------------------------------
 ########################################################################
@@ -33,6 +35,10 @@ MODEL_PARAMS = {
     'tulip': {
         'MODELS': ['TULIP-B-16-224'],
         'OUTPUT_DIRECTORY': 'TULIP_results'
+    },
+    'radio': {
+        'MODELS': ['radio_v2.5-b'],
+        'OUTPUT_DIRECTORY': 'RADIO_results'
     }
 }
 PRETRAINED_DATASET = 'webli'
@@ -50,6 +56,17 @@ def initialize_and_get_model(model_name, dataset):
 
 #-----------------------------------------------------------------------
 
+# def initialize_radio_model(version):
+#     device = "cuda" if torch.cuda.is_available() else "cpu"
+#     # why is it adaptor and not adapter like in hf
+#     model = torch.hub.load('NVlabs/RADIO', 'radio_model', version=version, progress=True, skip_validation=True, adaptor_names='clip')
+#     model = model.to(device).eval()
+#     # preprocess = model.make_preprocessor_external()
+#     # tokenizer = ## something
+#     # return model, tokenizer, preprocess, device
+
+#-----------------------------------------------------------------------
+
 def compute_sim_score(caption, model, tokenizer, image_features, device):
     if caption == 'NA':
         return 0.0
@@ -58,7 +75,6 @@ def compute_sim_score(caption, model, tokenizer, image_features, device):
         text_features = model.encode_text(tokens).cpu().numpy()[0]
         text_features = text_features / np.linalg.norm(text_features)
 
-    # spatial distance cosine = 1 - cos(u^T v) => do 1 - spatial distance cosine
     return 100 * max(1 - spatial.distance.cosine(image_features, text_features), 0)
 
 #-----------------------------------------------------------------------
@@ -124,26 +140,104 @@ def compute_und_scores(model_name, model, tokenizer, preprocess, device, csv_pat
                 sim4,
                 sim5,
                 sim6
-                # round(sim0 * 2.5, 4),
-                # round(sim1 * 2.5, 4), 
-                # round(sim2 * 2.5, 4),
-                # round(sim3 * 2.5, 4), 
-                # round(sim4 * 2.5, 4), 
-                # round(sim5 * 2.5, 4), 
-                # round(sim6 * 2.5, 4)
             ])
 
     print(f"Finished PoC1 for {model_name}")
     print()
 
 #-----------------------------------------------------------------------
+
+# def compute_und_scores_radio(model_name, model, tokenizer, preprocess, device, csv_path, out_dir):
+#     print(f"[RADIO] Model selected: {model_name}")
+#     print(f"[RADIO] This is a placeholder for the RADIO-based scoring pipeline.")
+
+#     with open(csv_path, 'r') as f:
+#         content = f.readlines()
+
+#     output_path = f'{out_dir}/{model_name}_UND_scores_100_samples.csv'
+#     with open(output_path, 'w', newline='') as myoutput:
+#         myoutput.write('imageURL,imageID,original,und_quantity,und_location,und_object,und_gender-number,und_gender,und_full,sim_original,sim_quantity,sim_location,sim_object,sim_gender-number,sim_gender,sim_full\n')
+#         writer = csv.writer(myoutput)
+
+#         for c, l in enumerate(content):
+#             if c == 0:
+#                 continue
+
+#             print(f"Processing line {c}")
+#             l = l.strip().split(';')
+
+#             imageURL = l[0]
+#             imageID = l[1]
+#             orig_caption = l[2]
+#             und_some = l[3]
+#             und_locative = l[4]
+#             und_demonstrative = l[5]
+#             und_they = l[6]
+#             und_person = l[7]
+#             und_full = l[8]
+
+#             try:
+#                 # raise NotImplementedError("Image preprocess using conditioning logic missing")
+#                 image = Image.open(imageURL).convert('RGB')
+#                 image = preprocess(image)
+#                 image = pil_to_tensor(image)
+#                 image = image.to(dtype=torch.bool, device=device).unsqueeze(0)
+
+#                 # image = pil_to_tensor(image).to(dtype=torch.float32, device='cuda')
+#                 # image.div_(255.0)
+#                 # image = image.unsqueeze(0)
+#             except Exception as e:
+#                 print(f"Error loading {imageURL}: {e}")
+#                 continue
+
+#             with torch.no_grad():
+#                 # image feature extraction logic goes here
+#                 # raise NotImplementedError("Image featurization and sim calculation missing")
+#                 image features = #
+#                 image_features = image_features / np.linalg.norm(image_features)
+
+#                 # sim0 = compute_sim_score(orig_caption, model, tokenizer, image_features, device)
+#                 # sim1 = compute_sim_score(und_some, model, tokenizer, image_features, device)
+#                 # sim2 = compute_sim_score(und_locative, model, tokenizer, image_features, device)
+#                 # sim3 = compute_sim_score(und_demonstrative, model, tokenizer, image_features, device)
+#                 # sim4 = compute_sim_score(und_they, model, tokenizer, image_features, device)
+#                 # sim5 = compute_sim_score(und_person, model, tokenizer, image_features, device)
+#                 # sim6 = compute_sim_score(und_full, model, tokenizer, image_features, device)
+
+#             writer.writerow([
+#                 imageURL,
+#                 imageID,
+#                 orig_caption, 
+#                 und_some,
+#                 und_locative,
+#                 und_demonstrative,
+#                 und_they,
+#                 und_person,
+#                 und_full,
+#                 sim0,
+#                 sim1,
+#                 sim2,
+#                 sim3,
+#                 sim4,
+#                 sim5,
+#                 sim6
+#             ])
     
+#     print(f"Finished PoC1 for {model_name}")
+#     print()
+
+#-----------------------------------------------------------------------
+
 def run_model(model_name):
     model_info = MODEL_PARAMS[model_name]
     for sub_model in model_info['MODELS']:
-        model, tokenizer, preprocess, device = initialize_and_get_model(sub_model, PRETRAINED_DATASET)
-        compute_und_scores(sub_model, model, tokenizer, preprocess, device, SAMPLE_CSV_PATH, model_info['OUTPUT_DIRECTORY'])
-        
+        # if model_name == "radio":
+        #     # model, tokenizer, preprocess, device = initialize_radio_model(sub_model)
+        #     # compute_und_scores_radio(sub_model, model, tokenizer, preprocess, device, SAMPLE_CSV_PATH, model_info['OUTPUT_DIRECTORY'])
+        # else:
+            model, tokenizer, preprocess, device = initialize_and_get_model(sub_model, PRETRAINED_DATASET)
+            compute_und_scores(sub_model, model, tokenizer, preprocess, device, SAMPLE_CSV_PATH, model_info['OUTPUT_DIRECTORY'])
+
 #-----------------------------------------------------------------------
 
 def main():
@@ -152,7 +246,7 @@ def main():
     model_help = "the model whose results are being generated"
 
     parser = ArgumentParser(prog=f'{sys.argv[0]}', description=desc)
-    parser.add_argument('model', type=str.lower, choices=['siglip', 'siglip2', 'tulip'], help=model_help)
+    parser.add_argument('model', type=str.lower, choices=['siglip', 'siglip2', 'tulip', 'radio'], help=model_help)
 
     args = vars(parser.parse_args())
     model = args.get('model')
@@ -161,6 +255,6 @@ def main():
     run_model(model)
     
 #-----------------------------------------------------------------------
-    
+
 if __name__ == '__main__':
     main()
