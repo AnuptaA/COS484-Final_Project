@@ -28,24 +28,50 @@ def get_csv_filenames(input_path):
 #----------------------------------------------------------------------#
 
 def analyze_model(model_name, results_dir):
-    print("Analyzing model")
+    input_dir = CSV_DIRECTORIES[model_name]
+    out_dir = os.path.join(results_dir, model_name)
+    file_paths = get_csv_filenames(input_dir)
 
-    input_path = f'{CSV_DIRECTORIES[model_name]}/'
-    file_paths = get_csv_filenames(input_path)
+    sim_cols = [
+        'sim_original',
+        'sim_quantity',
+        'sim_location',
+        'sim_object',
+        'sim_gender-number',
+        'sim_gender',
+        'sim_full'
+    ]
 
-    for csv_path, file_name in file_paths:
-        analysis_path = f'{results_dir}/{model_name}/{file_name}_results'
-        sim_scores = pd.read_csv(csv_path).iloc[:,-7:]
+    for csv_path, name in file_paths:
+        df = pd.read_csv(csv_path)
 
-        plt.figure(figsize=(10, 6))
-        violin_plot = sns.violinplot(data=sim_scores)
-        plt.title(f'Violin Plot of Similarity Scores - {file_name}')
+        means = {}
+        for col in sim_cols:
+            vals = df[col].dropna()
+            vals = vals[vals != 0]
+            # means[col] = vals.mean() if not vals.empty else float('nan') # if we want to display means somehow
+
+        melted = df[sim_cols].melt(var_name='type', value_name='score')
+        melted = melted.dropna()
+        melted = melted[melted['score'] != 0]
+
+        plt.figure(figsize=(8, 5))
+        palette = sns.color_palette("viridis", len(sim_cols))
+
+        sns.violinplot(x='type', y='score', hue='type', data=melted, palette=palette, legend=False)
+        plt.title(f'Violin Plot of Similarity Scores — {name}')
         plt.ylabel('CLIPScore')
-        plt.xticks(rotation=45, ha='right')
-        plt.subplots_adjust(bottom=0.2)
+        plt.xlabel('')
+        plt.xticks(rotation=30, ha='right')
 
-        fig = violin_plot.get_figure()
-        fig.savefig(f'{analysis_path}.png')
+        plt.tight_layout()
+
+        out_png = os.path.join(out_dir, f'{name}_violin.png')
+        plt.savefig(out_png)
+        plt.close()
+
+    print(f"\nPlots and summaries have been written to '{out_dir}/'.\n")
+
 
 #----------------------------------------------------------------------#
 
