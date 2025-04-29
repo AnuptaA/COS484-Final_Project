@@ -13,7 +13,7 @@ import seaborn as sns
 CSV_DIRECTORIES = {
     'siglip': 'SigLIP_results',
     'siglip2': 'SigLIP2_results',
-    # 'tulip': 'TULIP_results'
+    'radio': 'RADIO_results'
 }
 
 OUTPUT_DIRECTORY = 'analysis'
@@ -80,7 +80,7 @@ def main():
     help = "the model whose results are to be analyzed"
 
     parser = ArgumentParser(prog=f'{sys.argv[0]}', description=desc)
-    parser.add_argument('model', type=str.lower, choices=['siglip', 'siglip2', 'tulip'], help=help)
+    parser.add_argument('model', type=str.lower, choices=['siglip', 'siglip2', 'radio'], help=help)
     
     args = vars(parser.parse_args())
     model = args.get('model')

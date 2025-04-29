@@ -12,8 +12,9 @@ model = torch.hub.load(
     'radio_model', 
     version="radio_v2.5-b",
     adaptor_names='clip',
-    progress=True,
+    progress=True
 )
+
 model.eval().to(device)
 
 # get image as normal (this part is in RADIO repo README)
