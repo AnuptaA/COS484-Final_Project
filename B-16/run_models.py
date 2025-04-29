@@ -68,7 +68,7 @@ def compute_sim_score(caption, image_features, model, tokenizer, device):
     with torch.no_grad():
         text_features = model.encode_text(tokens)
     sim = F.cosine_similarity(image_features, text_features, dim=-1)
-    return sim.item() if sim.item() > 0 else 0.0
+    return 2.5 * sim.item() if sim.item() > 0 else 0.0
 
 #-----------------------------------------------------------------------
 
@@ -79,7 +79,7 @@ def compute_rad_sim_score(caption, image_summary, adaptor, tokenizer, device):
     with torch.no_grad():
         text_summary = adaptor.encode_text(tokens)
     sim = F.cosine_similarity(image_summary, text_summary, dim=-1)
-    return sim.item() if sim.item() > 0 else 0.0
+    return 2.5 * sim.item() if sim.item() > 0 else 0.0
 
 #-----------------------------------------------------------------------
 

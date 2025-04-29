@@ -1,200 +1,200 @@
 imageURL,imageID,original,und_quantity,und_location,und_object,und_gender-number,und_gender,und_full,sim_original,sim_quantity,sim_location,sim_object,sim_gender-number,sim_gender,sim_full
 ./coco-images/images/COCO_train2014_000000196545.jpg,196545,A young woman in glasses is holding a hot dog.,NA,NA,A young woman in glasses is holding that.,NA,A person woman in glasses is holding a hot dog.,"They are doing something here.
-",0.1408715546131134,0.0,0.0,0.04811365157365799,0.0,0.1537272185087204,0.013913850300014019
+",0.3521788865327835,0.0,0.0,0.12028412893414497,0.0,0.384318046271801,0.03478462575003505
 ./coco-images/images/COCO_train2014_000000134599.jpg,134599,A person holding a green plastic knife getting ready to cut a white cake.,NA,NA,A person holding a green plastic knife getting ready to cut this.,NA,NA,"They are doing something here.
-",0.1354186236858368,0.0,0.0,0.062061797827482224,0.0,0.0,0.002215302549302578
+",0.338546559214592,0.0,0.0,0.15515449456870556,0.0,0.0,0.005538256373256445
 ./coco-images/images/COCO_train2014_000000196545.jpg,196545,A woman holds a hot dog with toppings while sitting on a bench.,NA,A woman holds a hot dog with toppings while sitting there.,A woman holds that while sitting on a bench.,They hold a hot dog with toppings while sitting on a bench.,A person holds a hot dog with toppings while sitting on a bench.,"They are doing something here.
-",0.18093395233154297,0.0,0.16222244501113892,0.10873746871948242,0.16933950781822205,0.16330260038375854,0.013913850300014019
+",0.4523348808288574,0.0,0.4055561125278473,0.27184367179870605,0.4233487695455551,0.40825650095939636,0.03478462575003505
 ./coco-images/images/COCO_train2014_000000475999.jpg,475999,A large stack of brownies at a market.,Some brownies at a market.,A large stack of brownies there.,A large stack of this at a market.,NA,NA,"They are doing something here.
-",0.1935683935880661,0.1752910166978836,0.14501547813415527,0.1267431676387787,0.0,0.0,0.008700434118509293
+",0.48392098397016525,0.438227541744709,0.3625386953353882,0.3168579190969467,0.0,0.0,0.02175108529627323
 ./coco-images/images/COCO_train2014_000000134599.jpg,134599,A person is getting ready to cut a white cake.,NA,NA,A person is getting ready to cut this.,They are getting ready to cut a white cake.,NA,"They are doing something here.
-",0.1405908316373825,0.0,0.0,0.053891755640506744,0.13210952281951904,0.0,0.002215302549302578
+",0.35147707909345627,0.0,0.0,0.13472938910126686,0.3302738070487976,0.0,0.005538256373256445
 ./coco-images/images/COCO_train2014_000000488127.jpg,488127,A soldier cuts a large American military-themed cake.,NA,NA,A soldier cuts this.,They cut a large American military-themed cake.,A person cuts a large American military-themed cake.,"They are doing something here.
-",0.17870227992534637,0.0,0.0,0.0720030665397644,0.1702868491411209,0.1642652153968811,0.024124007672071457
+",0.44675569981336594,0.0,0.0,0.180007666349411,0.4257171228528023,0.41066303849220276,0.06031001918017864
 ./coco-images/images/COCO_train2014_000000096222.jpg,96222,A man in a black t-shirt stands in front of a birthday cake in a kitchen.,NA,A man in a black t-shirt stands there.,A man in a black t-shirt stands in front of this in a kitchen.,NA,A person in a black t-shirt stands in front of a birthday cake in a kitchen.,"They are doing something here.
-",0.1827331781387329,0.0,0.027142787352204323,0.09668248891830444,0.0,0.17537353932857513,0.024335592985153198
+",0.4568329453468323,0.0,0.06785696838051081,0.2417062222957611,0.0,0.43843384832143784,0.060838982462882996
 ./coco-images/images/COCO_train2014_000000266311.jpg,266311,A man doing a handstand trick on a skateboard near the beach and next to a group of parked bicycles.,A man doing a handstand trick on a skateboard near the beach and next to some parked bicycles.,A man doing a handstand trick on a skateboard there.,A man doing that on a skateboard near the beach and next to this.,NA,A person doing a handstand trick on a skateboard near the beach and next to a group of parked bicycles.,"They are doing something here.
-",0.18565741181373596,0.18972425162792206,0.11728261411190033,0.13280442357063293,0.0,0.19336651265621185,0.01715872623026371
+",0.4641435295343399,0.47431062906980515,0.2932065352797508,0.33201105892658234,0.0,0.48341628164052963,0.042896815575659275
 ./coco-images/images/COCO_train2014_000000195449.jpg,195449,A dog riding on a motorcycle with a person,NA,NA,A dog riding on that with a person,NA,NA,"They are doing something here.
-",0.10347464680671692,0.0,0.0,0.10323821753263474,0.0,0.0,0.008528142236173153
+",0.2586866170167923,0.0,0.0,0.25809554383158684,0.0,0.0,0.021320355590432882
 ./coco-images/images/COCO_train2014_000000449904.jpg,449904,A woman with glasses sitting at a table with a slice of pizza in front of her and a soft drink cup.,NA,A woman with glasses sitting there with a slice of pizza in front of her and a soft drink cup.,A woman with glasses sitting at a table with that in front of her and a soft drink cup.,NA,A person with glasses sitting at a table with a slice of pizza in front of them and a soft drink cup.,"They are doing something here.
-",0.17948606610298157,0.0,0.15300092101097107,0.16607330739498138,0.0,0.1680096685886383,0.014036252163350582
+",0.4487151652574539,0.0,0.3825023025274277,0.41518326848745346,0.0,0.42002417147159576,0.035090630408376455
 ./coco-images/images/COCO_train2014_000000522288.jpg,522288,A small white dog is poses near a wine glass.,NA,NA,A small white dog is poses near this.,NA,NA,"They are doing something here.
-",0.16167321801185608,0.0,0.0,0.07332848012447357,0.0,0.0,0.01145733892917633
+",0.4041830450296402,0.0,0.0,0.18332120031118393,0.0,0.0,0.028643347322940826
 ./coco-images/images/COCO_train2014_000000196545.jpg,196545,A woman sitting on a bench holding a hot dog,NA,A woman sitting there holding a hot dog,A woman sitting on a bench holding that,NA,A person sitting on a bench holding a hot dog,"They are doing something here.
-",0.18055638670921326,0.0,0.15824490785598755,0.0939866453409195,0.0,0.16483736038208008,0.013913850300014019
+",0.45139096677303314,0.0,0.39561226963996887,0.23496661335229874,0.0,0.4120934009552002,0.03478462575003505
 ./coco-images/images/COCO_train2014_000000488127.jpg,488127,A soldier preparing to cut a large cake.,NA,NA,A soldier preparing to cut that.,NA,A person preparing to cut a large cake.,"They are doing something here.
-",0.15433645248413086,0.0,0.0,0.059527549892663956,0.0,0.07884325087070465,0.024124007672071457
+",0.38584113121032715,0.0,0.0,0.1488188747316599,0.0,0.19710812717676163,0.06031001918017864
 ./coco-images/images/COCO_train2014_000000459209.jpg,459209,Two children are playing with letter magnets on a refrigerator.,Some children are playing with letter magnets on a refrigerator.,Two children are playing with letter magnets here.,Two children are playing with this on a refrigerator.,They are playing with letter magnets on a refrigerator.,Two people are playing with letter magnets on a refrigerator.,"They are doing something here.
-",0.19573545455932617,0.19465193152427673,0.17736144363880157,0.1529543697834015,0.19471940398216248,0.18732362985610962,0.0674622654914856
+",0.48933863639831543,0.48662982881069183,0.44340360909700394,0.3823859244585037,0.4867985099554062,0.46830907464027405,0.168655663728714
 ./coco-images/images/COCO_train2014_000000522288.jpg,522288,A dog with a wine glass being held to its face.,NA,NA,A dog with that being held to its face.,NA,NA,"They are doing something here.
-",0.16713407635688782,0.0,0.0,0.055399566888809204,0.0,0.0,0.01145733892917633
+",0.41783519089221954,0.0,0.0,0.138498917222023,0.0,0.0,0.028643347322940826
 ./coco-images/images/COCO_train2014_000000210266.jpg,210266,A man in a suit and tie holding an umbrella in an alley filled with them.,NA,A man in a suit and tie holding an umbrella there.,A man in a suit and tie holding this in an alley filled with them.,NA,A person in a suit and tie holding an umbrella in an alley filled with them.,"They are doing something here.
-",0.17288045585155487,0.0,0.10697317123413086,0.11113136261701584,0.0,0.1711929440498352,0.01619798317551613
+",0.4322011396288872,0.0,0.26743292808532715,0.2778284065425396,0.0,0.427982360124588,0.04049495793879032
 ./coco-images/images/COCO_train2014_000000122731.jpg,122731,A person wearing a neon safety vest holding an orange and green umbrella,NA,NA,A person wearing that holding this,NA,NA,"They are doing something here.
-",0.1697138547897339,0.0,0.0,0.048426322638988495,0.0,0.0,0.007092650514096022
+",0.4242846369743347,0.0,0.0,0.12106580659747124,0.0,0.0,0.017731626285240054
 ./coco-images/images/COCO_train2014_000000029642.jpg,29642,A girl with long brown hair with streaks of red lays on a bed and looks at an open laptop computer.,NA,A girl with long brown hair with streaks of red lays there and looks at an open laptop computer.,A girl with long brown hair with that lays on a bed and looks at this.,NA,A person with long brown hair with streaks of red lays on a bed and looks at an open laptop computer.,"They are doing something here.
-",0.17519091069698334,0.0,0.13857382535934448,0.09099685400724411,0.0,0.18538372218608856,0.04048018157482147
+",0.43797727674245834,0.0,0.3464345633983612,0.22749213501811028,0.0,0.4634593054652214,0.10120045393705368
 ./coco-images/images/COCO_train2014_000000096222.jpg,96222,A man posing with a birthday cake in a kitchen.,NA,A man posing with a birthday cake there.,A man posing with that in a kitchen.,NA,A person posing with a birthday cake in a kitchen.,"They are doing something here.
-",0.17354846000671387,0.0,0.1232900470495224,0.10260515660047531,0.0,0.14178599417209625,0.024335592985153198
+",0.43387115001678467,0.0,0.308225117623806,0.2565128915011883,0.0,0.35446498543024063,0.060838982462882996
 ./coco-images/images/COCO_train2014_000000195449.jpg,195449,A man riding on the back of a motorcycle with a large brown dog.,NA,NA,A man riding on that with a large brown dog.,NA,A person riding on the back of a motorcycle with a large brown dog.,"They are doing something here.
-",0.09739579260349274,0.0,0.0,0.09198866784572601,0.0,0.10748275369405746,0.008528142236173153
+",0.24348948150873184,0.0,0.0,0.22997166961431503,0.0,0.26870688423514366,0.021320355590432882
 ./coco-images/images/COCO_train2014_000000195449.jpg,195449,A dog riding on a scooter with someone.,NA,NA,A dog riding on this with someone.,NA,NA,"They are doing something here.
-",0.1230735033750534,0.0,0.0,0.1218966692686081,0.0,0.0,0.008528142236173153
+",0.3076837584376335,0.0,0.0,0.30474167317152023,0.0,0.0,0.021320355590432882
 ./coco-images/images/COCO_train2014_000000134599.jpg,134599,A white frosted cake in the middle of a table with someone holding a knife above it.,NA,A white frosted cake there with someone holding a knife above it.,A white frosted cake in the middle of this with someone holding that.,NA,NA,"They are doing something here.
-",0.15787068009376526,0.0,0.1609996259212494,0.11370967328548431,0.0,0.0,0.002215302549302578
+",0.39467670023441315,0.0,0.4024990648031235,0.2842741832137108,0.0,0.0,0.005538256373256445
 ./coco-images/images/COCO_train2014_000000420523.jpg,420523,A banana and strawberry on the keyboard of a laptop.,NA,A banana and strawberry here.,A banana and strawberry on that.,NA,NA,"They are doing something here.
-",0.19667959213256836,0.0,0.1493735909461975,0.14826199412345886,0.0,0.0,0.04399096965789795
+",0.4916989803314209,0.0,0.3734339773654938,0.37065498530864716,0.0,0.0,0.10997742414474487
 ./coco-images/images/COCO_train2014_000000488127.jpg,488127,A guy in a military uniform cutting a big cake.,NA,NA,A guy in a military uniform cutting that.,NA,A person in a military uniform cutting a big cake.,"They are doing something here.
-",0.17008505761623383,0.0,0.0,0.06927095353603363,0.0,0.15316316485404968,0.024124007672071457
+",0.42521264404058456,0.0,0.0,0.17317738384008408,0.0,0.3829079121351242,0.06031001918017864
 ./coco-images/images/COCO_train2014_000000160471.jpg,160471,A man in grey sweater on floor next to a suitcase.,NA,A man in grey sweater here.,NA,NA,A person in grey sweater on floor next to a suitcase.,"They are doing something here.
-",0.13929039239883423,0.0,0.03762851655483246,0.0,0.0,0.11931569129228592,0.037541914731264114
+",0.34822598099708557,0.0,0.09407129138708115,0.0,0.0,0.2982892282307148,0.09385478682816029
 ./coco-images/images/COCO_train2014_000000481931.jpg,481931,Two Navy sailors cutting a large sheet cake.,Some Navy sailors cutting a large sheet cake.,NA,Two Navy sailors cutting that.,NA,Two Navy people cutting a large sheet cake.,"They are doing something here.
-",0.1948164999485016,0.1954609453678131,0.0,0.12117915600538254,0.0,0.1780674159526825,0.01701294630765915
+",0.48704124987125397,0.4886523634195328,0.0,0.30294789001345634,0.0,0.44516853988170624,0.04253236576914787
 ./coco-images/images/COCO_train2014_000000420523.jpg,420523,A banana and a strawberry is sitting on an open laptop keyboard.,NA,A banana and a strawberry is sitting here.,A banana and a strawberry is sitting on this.,They are sitting on an open laptop keyboard.,NA,"They are doing something here.
-",0.20547907054424286,0.0,0.16026870906352997,0.16907694935798645,0.08635856956243515,0.0,0.04399096965789795
+",0.5136976763606071,0.0,0.4006717726588249,0.4226923733949661,0.21589642390608788,0.0,0.10997742414474487
 ./coco-images/images/COCO_train2014_000000522288.jpg,522288,A small white dog being offered a glass of red wine.,NA,NA,A small white dog being offered this.,NA,NA,"They are doing something here.
-",0.16132205724716187,0.0,0.0,0.10932869464159012,0.0,0.0,0.01145733892917633
+",0.40330514311790466,0.0,0.0,0.2733217366039753,0.0,0.0,0.028643347322940826
 ./coco-images/images/COCO_train2014_000000336942.jpg,336942,A woman in a white dress is sitting with her cell phone.,NA,NA,A woman in a white dress is sitting with that.,NA,A person in a white dress is sitting with their cell phone.,"They are doing something here.
-",0.15031814575195312,0.0,0.0,0.1227794662117958,0.0,0.10591095685958862,0.016327988356351852
+",0.3757953643798828,0.0,0.0,0.3069486655294895,0.0,0.26477739214897156,0.04081997089087963
 ./coco-images/images/COCO_train2014_000000134238.jpg,134238,"A cake with a missing slice on a floral plate, two bowls of fruit and a hand of bananas.","A cake with a missing slice on a floral plate, some bowls of fruit and some bananas.","A cake with a missing slice there, two bowls of fruit and a hand of bananas.","A cake with a missing slice on that, two bowls of fruit and a hand of bananas.",NA,NA,"They are doing something here.
-",0.14396172761917114,0.14510437846183777,0.14017131924629211,0.13709715008735657,0.0,0.0,0.0
+",0.35990431904792786,0.3627609461545944,0.3504282981157303,0.3427428752183914,0.0,0.0,0.0
 ./coco-images/images/COCO_train2014_000000196545.jpg,196545,Woman sitting on a bench holding a hotdog in her hand,NA,Woman sitting there holding a hotdog in her hand,Woman sitting on a bench holding this in her hand,NA,Person sitting on a bench holding a hotdog in their hand,"They are doing something here.
-",0.17449435591697693,0.0,0.16109338402748108,0.09439602494239807,0.0,0.17088380455970764,0.013913850300014019
+",0.4362358897924423,0.0,0.4027334600687027,0.23599006235599518,0.0,0.4272095113992691,0.03478462575003505
 ./coco-images/images/COCO_train2014_000000195449.jpg,195449,a person on a motorcycle and a dog,NA,NA,NA,NA,NA,"They are doing something here.
-",0.10644058883190155,0.0,0.0,0.0,0.0,0.0,0.008528142236173153
+",0.2661014720797539,0.0,0.0,0.0,0.0,0.0,0.021320355590432882
 ./coco-images/images/COCO_train2014_000000184930.jpg,184930,a man in a brown shirt is holding two large stuffed teddy bears,a man in a brown shirt is holding some large stuffed teddy bears,NA,a man in a brown shirt is holding that,NA,a person in a brown shirt is holding two large stuffed teddy bears,"They are doing something here.
-",0.17805737257003784,0.17457103729248047,0.0,0.061821017414331436,0.0,0.1627761721611023,0.01976180262863636
+",0.4451434314250946,0.43642759323120117,0.0,0.1545525435358286,0.0,0.40694043040275574,0.0494045065715909
 ./coco-images/images/COCO_train2014_000000200221.jpg,200221,A baby sits in a suitcase in front of a book shelf,NA,A baby sits in a suitcase there,A baby sits in a suitcase in front of this,They sit in a suitcase in front of a book shelf,A person sits in a suitcase in front of a book shelf,"They are doing something here.
-",0.17545641958713531,0.0,0.12248397618532181,0.1343238651752472,0.1498183161020279,0.13822965323925018,0.039722271263599396
+",0.4386410489678383,0.0,0.3062099404633045,0.335809662938118,0.37454579025506973,0.34557413309812546,0.09930567815899849
 ./coco-images/images/COCO_train2014_000000449904.jpg,449904,A young woman sits at a cafe table with a piece of pizza and a beverage.,NA,A young woman sits here with a piece of pizza and a beverage.,A young woman sits at a cafe table with that.,They sit at a cafe table with a piece of pizza and a beverage.,A young person sits at a cafe table with a piece of pizza and a beverage.,"They are doing something here.
-",0.14653143286705017,0.0,0.1309903860092163,0.11385450512170792,0.1271330714225769,0.14805807173252106,0.014036252163350582
+",0.3663285821676254,0.0,0.32747596502304077,0.2846362628042698,0.31783267855644226,0.37014517933130264,0.035090630408376455
 ./coco-images/images/COCO_train2014_000000488127.jpg,488127,"A veteran cutting a birthday cake that is decorated in red, white, and blue.",NA,NA,NA,NA,"A person cutting a birthday cake that is decorated in red, white, and blue.","They are doing something here.
-",0.1455768495798111,0.0,0.0,0.0,0.0,0.08077077567577362,0.024124007672071457
+",0.36394212394952774,0.0,0.0,0.0,0.0,0.20192693918943405,0.06031001918017864
 ./coco-images/images/COCO_train2014_000000330652.jpg,330652,two children laying on restaurant booth seats ,some children laying on restaurant booth seats ,two children laying there,NA,NA,two people laying on restaurant booth seats ,"They are doing something here.
-",0.20065908133983612,0.2038423717021942,0.09897211194038391,0.0,0.0,0.16272613406181335,0.060756854712963104
+",0.5016477033495903,0.5096059292554855,0.24743027985095978,0.0,0.0,0.4068153351545334,0.15189213678240776
 ./coco-images/images/COCO_train2014_000000459209.jpg,459209,Two young boys playing with letter magnets on the front of a refrigerator.,Some young boys playing with letter magnets on the front of a refrigerator.,NA,Two young boys playing with this on the front of a refrigerator.,NA,Two young people playing with letter magnets on the front of a refrigerator.,"They are doing something here.
-",0.18073320388793945,0.18423719704151154,0.0,0.13539232313632965,0.0,0.19988606870174408,0.0674622654914856
+",0.45183300971984863,0.46059299260377884,0.0,0.3384808078408241,0.0,0.4997151717543602,0.168655663728714
 ./coco-images/images/COCO_train2014_000000034815.jpg,34815,a man and a woman with bicycles standing next to a train,NA,a man and a woman with bicycles standing here,a man and a woman with that standing next to a train,NA,people with bicycles standing next to a train,"They are doing something here.
-",0.1528584361076355,0.0,0.11507291346788406,0.08482477068901062,0.0,0.15562473237514496,0.00366103183478117
+",0.38214609026908875,0.0,0.28768228366971016,0.21206192672252655,0.0,0.3890618309378624,0.009152579586952925
 ./coco-images/images/COCO_train2014_000000449904.jpg,449904,A young woman sitting in a restaurant with a pizza and soda in front of her.,NA,A young woman sitting there with a pizza and soda in front of her.,A young woman sitting in a restaurant with that in front of her.,NA,A young person sitting in a restaurant with a pizza and soda in front of them.,"They are doing something here.
-",0.1411091387271881,0.0,0.12874387204647064,0.09229657053947449,0.0,0.14406216144561768,0.014036252163350582
+",0.3527728468179703,0.0,0.3218596801161766,0.23074142634868622,0.0,0.3601554036140442,0.035090630408376455
 ./coco-images/images/COCO_train2014_000000420523.jpg,420523,A banana and a strawberry sitting on a lap top computer.,NA,A banana and a strawberry sitting there.,A banana and a strawberry sitting on this.,NA,NA,"They are doing something here.
-",0.217142716050148,0.0,0.1505969911813736,0.1615021526813507,0.0,0.0,0.04399096965789795
+",0.54285679012537,0.0,0.376492477953434,0.40375538170337677,0.0,0.0,0.10997742414474487
 ./coco-images/images/COCO_train2014_000000560969.jpg,560969,A young boy eating a hot dog over a paper plate.,NA,A young boy eating a hot dog there.,A young boy eating that over a paper plate.,NA,A young person eating a hot dog over a paper plate.,"They are doing something here.
-",0.1575010120868683,0.0,0.12408682703971863,0.11992179602384567,0.0,0.13702215254306793,0.028578422963619232
+",0.3937525302171707,0.0,0.31021706759929657,0.2998044900596142,0.0,0.34255538135766983,0.07144605740904808
 ./coco-images/images/COCO_train2014_000000420523.jpg,420523,A banana and a strawboard are on a laptop keyboard.,NA,A banana and a strawboard are there.,A banana and a strawboard are on this.,They are on a laptop keyboard.,NA,"They are doing something here.
-",0.19892409443855286,0.0,0.1396448016166687,0.1550537794828415,0.10656905174255371,0.0,0.04399096965789795
+",0.49731023609638214,0.0,0.34911200404167175,0.38763444870710373,0.2664226293563843,0.0,0.10997742414474487
 ./coco-images/images/COCO_train2014_000000340923.jpg,340923,An infant sits next to a stuffed teddy bear toy.,NA,An infant sits there.,An infant sits next to that.,They sit next to a stuffed teddy bear toy.,A person sits next to a stuffed teddy bear toy.,"They are doing something here.
-",0.15716688334941864,0.0,0.10586327314376831,0.10811029374599457,0.1218239888548851,0.10699933022260666,0.013462819159030914
+",0.3929172083735466,0.0,0.2646581828594208,0.2702757343649864,0.30455997213721275,0.26749832555651665,0.033657047897577286
 ./coco-images/images/COCO_train2014_000000330652.jpg,330652,Children laying in a booth at a restaurant,NA,Children laying there,NA,NA,People laying in a booth at a restaurant,"They are doing something here.
-",0.19264736771583557,0.0,0.10399423539638519,0.0,0.0,0.13543623685836792,0.060756854712963104
+",0.48161841928958893,0.0,0.259985588490963,0.0,0.0,0.3385905921459198,0.15189213678240776
 ./coco-images/images/COCO_train2014_000000195449.jpg,195449,A person with a yellow lab on a moped ridding down the street.,NA,A person with a yellow lab there ridding down the street.,A person with that ridding down the street.,NA,NA,"They are doing something here.
-",0.16438105702400208,0.0,0.1299198567867279,0.09409382194280624,0.0,0.0,0.008528142236173153
+",0.4109526425600052,0.0,0.32479964196681976,0.2352345548570156,0.0,0.0,0.021320355590432882
 ./coco-images/images/COCO_train2014_000000034815.jpg,34815,a man and woman standing next to a bike next to a subtrain,NA,a man and woman standing there,a man and woman standing next to a bike next to this,NA,people standing next to a bike next to a subtrain,"They are doing something here.
-",0.15619933605194092,0.0,0.0397501178085804,0.10758812725543976,0.0,0.15374623239040375,0.00366103183478117
+",0.3904983401298523,0.0,0.099375294521451,0.2689703181385994,0.0,0.38436558097600937,0.009152579586952925
 ./coco-images/images/COCO_train2014_000000160471.jpg,160471,A man laying on the floor near a suitcase.,NA,A man laying here near a suitcase.,A man laying on the floor near this.,NA,A person laying on the floor near a suitcase.,"They are doing something here.
-",0.16979357600212097,0.0,0.16707471013069153,0.1160888820886612,0.0,0.16178502142429352,0.037541914731264114
+",0.42448394000530243,0.0,0.4176867753267288,0.290222205221653,0.0,0.4044625535607338,0.09385478682816029
 ./coco-images/images/COCO_train2014_000000034815.jpg,34815,A man and woman pause with their bikes beside a train.,NA,A man and woman pause with their bikes there.,A man and woman pause with their bikes beside that.,They pause with their bikes beside a train.,People pause with their bikes beside a train.,"They are doing something here.
-",0.16564306616783142,0.0,0.1211390569806099,0.12040354311466217,0.15388508141040802,0.1534748673439026,0.00366103183478117
+",0.41410766541957855,0.0,0.30284764245152473,0.3010088577866554,0.38471270352602005,0.38368716835975647,0.009152579586952925
 ./coco-images/images/COCO_train2014_000000335696.jpg,335696,Two elderly women speak to each other on a bench.,Some elderly women speak to each other on a bench.,Two elderly women speak to each other here.,NA,They speak to each other on a bench.,Two elderly people speak to each other on a bench.,"They are doing something here.
-",0.153224915266037,0.15075023472309113,0.11456554383039474,0.0,0.13232216238975525,0.14307603240013123,0.01996888965368271
+",0.38306228816509247,0.3768755868077278,0.28641385957598686,0.0,0.3308054059743881,0.35769008100032806,0.04992222413420677
 ./coco-images/images/COCO_train2014_000000040338.jpg,40338,Soldiers hold a refrigerator open to show a woman what's inside.,NA,NA,Soldiers hold this to show a woman what's inside.,They hold a refrigerator open to show a woman what's inside.,People hold a refrigerator open to show a person what's inside.,"They are doing something here.
-",0.20091257989406586,0.0,0.0,0.06335292756557465,0.13620983064174652,0.14449065923690796,0.01649642363190651
+",0.5022814497351646,0.0,0.0,0.15838231891393661,0.3405245766043663,0.3612266480922699,0.041241059079766273
 ./coco-images/images/COCO_train2014_000000394151.jpg,394151,A woman with luggage standing behind her open trunk,NA,A woman with luggage standing there,A woman with luggage standing behind that,NA,A person with luggage standing behind their open trunk,"They are doing something here.
-",0.15073612332344055,0.0,0.10143344104290009,0.1312132477760315,0.0,0.163916677236557,0.01647210866212845
+",0.3768403083086014,0.0,0.2535836026072502,0.32803311944007874,0.0,0.4097916930913925,0.04118027165532112
 ./coco-images/images/COCO_train2014_000000459209.jpg,459209,2 children look at magnetic letters on a refrigerator,some children look at magnetic letters on a refrigerator,NA,2 children look at that,They look at magnetic letters on a refrigerator,2 people look at magnetic letters on a refrigerator,"They are doing something here.
-",0.19544075429439545,0.19316744804382324,0.0,0.08527383208274841,0.18199613690376282,0.1781696230173111,0.0674622654914856
+",0.4886018857359886,0.4829186201095581,0.0,0.21318458020687103,0.45499034225940704,0.44542405754327774,0.168655663728714
 ./coco-images/images/COCO_train2014_000000145499.jpg,145499,A lady holding a bottle of ketchup and a dog in a hot dog bun costume.,NA,NA,A lady holding this and that.,NA,A person holding a bottle of ketchup and a dog in a hot dog bun costume.,"They are doing something here.
-",0.16060850024223328,0.0,0.0,0.0035302303731441498,0.0,0.1797308623790741,0.01912088692188263
+",0.4015212506055832,0.0,0.0,0.008825575932860374,0.0,0.44932715594768524,0.047802217304706573
 ./coco-images/images/COCO_train2014_000000184930.jpg,184930,A man carrying two large teddy bears while looking to his left.,A man carrying some large teddy bears while looking to his left.,A man carrying two large teddy bears while looking there.,A man carrying this while looking to his left.,NA,A person carrying two large teddy bears while looking to their left.,"They are doing something here.
-",0.15371844172477722,0.156206414103508,0.1488468199968338,0.06392122805118561,0.0,0.15007252991199493,0.01976180262863636
+",0.38429610431194305,0.39051603525877,0.3721170499920845,0.15980307012796402,0.0,0.37518132477998734,0.0494045065715909
 ./coco-images/images/COCO_train2014_000000461183.jpg,461183,Two men sit on a boat and prepare to scuba dive.,Some men sit on a boat and prepare to scuba dive.,Two men sit here and prepare to scuba dive.,NA,They sit on a boat and prepare to scuba dive.,Two people sit on a boat and prepare to scuba dive.,"They are doing something here.
-",0.13827887177467346,0.12345122545957565,0.14537429809570312,0.0,0.12384076416492462,0.12729774415493011,0.023406608030200005
+",0.34569717943668365,0.30862806364893913,0.3634357452392578,0.0,0.30960191041231155,0.3182443603873253,0.05851652007550001
 ./coco-images/images/COCO_train2014_000000344597.jpg,344597,A person holds a Wii-mote while a dog sleeps in their lap.,NA,A person holds a Wii-mote while a dog sleeps here.,A person holds this while a dog sleeps in their lap.,They hold a Wii-mote while a dog sleeps in their lap.,NA,"They are doing something here.
-",0.15618258714675903,0.0,0.14405128359794617,0.11593316495418549,0.15012475848197937,0.0,0.009144680574536324
+",0.3904564678668976,0.0,0.3601282089948654,0.2898329123854637,0.3753118962049484,0.0,0.02286170143634081
 ./coco-images/images/COCO_train2014_000000205931.jpg,205931,A woman is painting designs on an umbrella.,NA,NA,A woman is painting this on an umbrella.,They are painting designs on an umbrella.,A person is painting designs on an umbrella.,"They are doing something here.
-",0.1586538404226303,0.0,0.0,0.13267147541046143,0.14890332520008087,0.13624659180641174,0.0
+",0.3966346010565758,0.0,0.0,0.33167868852615356,0.3722583130002022,0.34061647951602936,0.0
 ./coco-images/images/COCO_train2014_000000528563.jpg,528563,A woman with a tattoo playing the Wii.,NA,NA,A woman with a tattoo playing this.,NA,A person with a tattoo playing the Wii.,"They are doing something here.
-",0.16789177060127258,0.0,0.0,0.07596851885318756,0.0,0.1502726823091507,0.05023184418678284
+",0.41972942650318146,0.0,0.0,0.1899212971329689,0.0,0.37568170577287674,0.1255796104669571
 ./coco-images/images/COCO_train2014_000000160471.jpg,160471,A man is laying on the floor of a hotel room next to an open suitcase.,NA,A man is laying there next to an open suitcase.,A man is laying on the floor of a hotel room next to this.,They are laying on the floor of a hotel room next to an open suitcase.,A person is laying on the floor of a hotel room next to an open suitcase.,"They are doing something here.
-",0.1731378138065338,0.0,0.17122042179107666,0.12561637163162231,0.15409791469573975,0.1620638072490692,0.037541914731264114
+",0.43284453451633453,0.0,0.42805105447769165,0.3140409290790558,0.38524478673934937,0.40515951812267303,0.09385478682816029
 ./coco-images/images/COCO_train2014_000000324732.jpg,324732,a woman stands in front of stainless steel refrigerators holding a sign,NA,a woman stands there holding a sign,a woman stands in front of this holding a sign,They stand in front of stainless steel refrigerators holding a sign,a person stands in front of stainless steel refrigerators holding a sign,"They are doing something here.
-",0.09776830673217773,0.0,0.0,0.0,0.09546463191509247,0.09816357493400574,0.0
+",0.24442076683044434,0.0,0.0,0.0,0.23866157978773117,0.24540893733501434,0.0
 ./coco-images/images/COCO_train2014_000000461183.jpg,461183,Two males in scuba gear on a boat.,Some males in scuba gear on a boat.,Two males in scuba gear here.,Two males in that on a boat.,NA,Two people in scuba gear on a boat.,"They are doing something here.
-",0.14081956446170807,0.13255508244037628,0.14592069387435913,0.10381265729665756,0.0,0.12640225887298584,0.023406608030200005
+",0.35204891115427017,0.3313877061009407,0.3648017346858978,0.2595316432416439,0.0,0.3160056471824646,0.05851652007550001
 ./coco-images/images/COCO_train2014_000000121619.jpg,121619,"Without paper handy, a man writes a reminder about the parking meter on his palm.",NA,"Without paper handy, a man writes a reminder about the parking meter here.","Without paper handy, a man writes this on his palm.","Without paper handy, they write a reminder about the parking meter on their palm.","Without paper handy, a person writes a reminder about the parking meter on their palm.","They are doing something here.
-",0.10688529908657074,0.0,0.09819519519805908,0.03623747453093529,0.09231977164745331,0.09362074732780457,0.011700315400958061
+",0.26721324771642685,0.0,0.2454879879951477,0.09059368632733822,0.23079942911863327,0.2340518683195114,0.029250788502395153
 ./coco-images/images/COCO_train2014_000000035995.jpg,35995,A man in camouflage is shaking hands with a man in a suit in front of some trucks.,NA,A man in camouflage is shaking hands with a man in a suit here.,NA,NA,A person in camouflage is shaking hands with a person in a suit in front of some trucks.,"They are doing something here.
-",0.13486041128635406,0.0,0.10614193230867386,0.0,0.0,0.12710130214691162,0.0
+",0.33715102821588516,0.0,0.26535483077168465,0.0,0.0,0.31775325536727905,0.0
 ./coco-images/images/COCO_train2014_000000292101.jpg,292101,A gray cat laying on top of a laptop computer.,NA,A gray cat laying there.,A gray cat laying on top of this.,NA,NA,"They are doing something here.
-",0.1531914323568344,0.0,0.07967313379049301,0.10312477499246597,0.0,0.0,0.02669563516974449
+",0.38297858089208603,0.0,0.19918283447623253,0.25781193748116493,0.0,0.0,0.06673908792436123
 ./coco-images/images/COCO_train2014_000000420523.jpg,420523,A banana and strawberry on top of a laptop,NA,A banana and strawberry here,NA,NA,NA,"They are doing something here.
-",0.20405781269073486,0.0,0.1493735909461975,0.0,0.0,0.0,0.04399096965789795
+",0.5101445317268372,0.0,0.3734339773654938,0.0,0.0,0.0,0.10997742414474487
 ./coco-images/images/COCO_train2014_000000449904.jpg,449904,A young woman sitting at a table in front of a piece of pizza.,NA,A young woman sitting there in front of a piece of pizza.,A young woman sitting at a table in front of that.,NA,A young person sitting at a table in front of a piece of pizza.,"They are doing something here.
-",0.13613395392894745,0.0,0.10612493008375168,0.10524588078260422,0.0,0.12494298815727234,0.014036252163350582
+",0.3403348848223686,0.0,0.2653123252093792,0.26311470195651054,0.0,0.31235747039318085,0.035090630408376455
 ./coco-images/images/COCO_train2014_000000344597.jpg,344597,A pug dog lying on a persons lap who's holding a remote controller.,NA,NA,A pug dog lying on a persons lap who's holding that.,NA,NA,"They are doing something here.
-",0.16787299513816833,0.0,0.0,0.13484695553779602,0.0,0.0,0.009144680574536324
+",0.41968248784542084,0.0,0.0,0.33711738884449005,0.0,0.0,0.02286170143634081
 ./coco-images/images/COCO_train2014_000000121619.jpg,121619,"A man is standing beside a parking meter, writing on his hand.",NA,"A man is standing there, writing on his hand.","A man is standing beside that, writing on his hand.","They are standing beside a parking meter, writing on their hand.","A person is standing beside a parking meter, writing on their hand.","They are doing something here.
-",0.1444968283176422,0.0,0.058326274156570435,0.06824909150600433,0.12392651289701462,0.13665083050727844,0.011700315400958061
+",0.36124207079410553,0.0,0.1458156853914261,0.17062272876501083,0.30981628224253654,0.3416270762681961,0.029250788502395153
 ./coco-images/images/COCO_train2014_000000096222.jpg,96222,A man standing over a cake with candles.,NA,A man standing there.,A man standing over this.,NA,A person standing over a cake with candles.,"They are doing something here.
-",0.1480984389781952,0.0,0.0415835902094841,0.06435424089431763,0.0,0.10836230963468552,0.024335592985153198
+",0.370246097445488,0.0,0.10395897552371025,0.16088560223579407,0.0,0.2709057740867138,0.060838982462882996
 ./coco-images/images/COCO_train2014_000000340923.jpg,340923,An infant and a teddy beat sitting up next to each other.,NA,An infant and a teddy beat sitting there.,NA,NA,A person and a teddy beat sitting up next to each other.,"They are doing something here.
-",0.13079281151294708,0.0,0.1421862244606018,0.0,0.0,0.07873280346393585,0.013462819159030914
+",0.3269820287823677,0.0,0.3554655611515045,0.0,0.0,0.19683200865983963,0.033657047897577286
 ./coco-images/images/COCO_train2014_000000292101.jpg,292101,a gray and white cat is laying on top of a laptop,NA,a gray and white cat is laying there.,a gray and white cat is laying on this,they are laying on top of a laptop,NA,"They are doing something here.
-",0.15826265513896942,0.0,0.08960137516260147,0.10058875381946564,0.0882486030459404,0.0,0.02669563516974449
+",0.39565663784742355,0.0,0.22400343790650368,0.2514718845486641,0.220621507614851,0.0,0.06673908792436123
 ./coco-images/images/COCO_train2014_000000184930.jpg,184930,a man carrying one brown and one tan stuffed bear standing in front of a car poster,a man carrying some stuffed bears standing in front of a car poster,a man carrying one brown and one tan stuffed bear standing there,a man carrying this standing in front of a car poster,NA,a person carrying one brown and one tan stuffed bear standing in front of a car poster,"They are doing something here.
-",0.1735832542181015,0.1460394412279129,0.16722372174263,0.08687794953584671,0.0,0.17343904078006744,0.01976180262863636
+",0.43395813554525375,0.36509860306978226,0.418059304356575,0.21719487383961678,0.0,0.4335976019501686,0.0494045065715909
 ./coco-images/images/COCO_train2014_000000468357.jpg,468357,"A wallet, laptop, cellphone, cups and bottles of water sitting on a table.",NA,"A wallet, laptop, cellphone, cups and bottles of water here.",NA,NA,NA,"They are doing something here.
-",0.12699994444847107,0.0,0.13842938840389252,0.0,0.0,0.0,0.017903348430991173
+",0.3174998611211777,0.0,0.3460734710097313,0.0,0.0,0.0,0.04475837107747793
 ./coco-images/images/COCO_train2014_000000330652.jpg,330652,A couple of kids laying on top of booths.,Some kids laying on top of booths.,A couple of kids laying there.,NA,NA,A couple of people laying on top of booths.,"They are doing something here.
-",0.1512479931116104,0.15059490501880646,0.10667107999324799,0.0,0.0,0.10773694515228271,0.060756854712963104
+",0.37811998277902603,0.37648726254701614,0.26667769998311996,0.0,0.0,0.2693423628807068,0.15189213678240776
 ./coco-images/images/COCO_train2014_000000279373.jpg,279373,A woman in a dress standing by some motorcycles.,NA,A woman in a dress standing here.,NA,NA,A person in a dress standing by some motorcycles.,"They are doing something here.
-",0.1514810472726822,0.0,0.07511786371469498,0.0,0.0,0.13564646244049072,0.010648602619767189
+",0.3787026181817055,0.0,0.18779465928673744,0.0,0.0,0.3391161561012268,0.026621506549417973
 ./coco-images/images/COCO_train2014_000000134599.jpg,134599,A large white cake sitting on top of a table.,NA,A large white cake sitting here.,A large white cake sitting on top of that.,NA,NA,"They are doing something here.
-",0.08303287625312805,0.0,0.10434509813785553,0.07721463590860367,0.0,0.0,0.002215302549302578
+",0.20758219063282013,0.0,0.2608627453446388,0.19303658977150917,0.0,0.0,0.005538256373256445
 ./coco-images/images/COCO_train2014_000000324732.jpg,324732,A woman standing in front of a metal refrigerator freezer.,NA,A woman standing here.,A woman standing in front of that.,NA,A person standing in front of a metal refrigerator freezer.,"They are doing something here.
-",0.09243589639663696,0.0,0.0,0.0,0.0,0.0731571689248085,0.0
+",0.2310897409915924,0.0,0.0,0.0,0.0,0.18289292231202126,0.0
 ./coco-images/images/COCO_train2014_000000145499.jpg,145499,A person in a yellow shirt about to ketchup the dog in a hot dog costume.,NA,NA,A person in a yellow shirt about to ketchup the dog in that.,NA,NA,"They are doing something here.
-",0.17004290223121643,0.0,0.0,0.1416480392217636,0.0,0.0,0.01912088692188263
+",0.4251072555780411,0.0,0.0,0.354120098054409,0.0,0.0,0.047802217304706573
 ./coco-images/images/COCO_train2014_000000459209.jpg,459209,Two small children playing with their refrigerator magnets.,Some small children playing with their refrigerator magnets.,NA,Two small children playing with this.,NA,Two small people playing with their refrigerator magnets.,"They are doing something here.
-",0.15262636542320251,0.14984357357025146,0.0,0.07486537843942642,0.0,0.13685986399650574,0.0674622654914856
+",0.3815659135580063,0.37460893392562866,0.0,0.18716344609856606,0.0,0.34214965999126434,0.168655663728714
 ./coco-images/images/COCO_train2014_000000570019.jpg,570019,A hot dog covered in toppings sitting next to beer.,NA,A hot dog covered in toppings sitting here.,A hot dog covered in this sitting next to beer.,NA,NA,"They are doing something here.
-",0.15481120347976685,0.0,0.10120780766010284,0.1563183218240738,0.0,0.0,0.0
+",0.3870280086994171,0.0,0.2530195191502571,0.3907958045601845,0.0,0.0,0.0
 ./coco-images/images/COCO_train2014_000000335696.jpg,335696,two women are chatting on a brown bench,some women are chatting on a brown bench,two women are chatting here,NA,they are chatting on a brown bench,two people are chatting on a brown bench,"They are doing something here.
-",0.16595090925693512,0.1613689363002777,0.11628216505050659,0.0,0.14820480346679688,0.15302130579948425,0.01996888965368271
+",0.4148772731423378,0.4034223407506943,0.2907054126262665,0.0,0.3705120086669922,0.38255326449871063,0.04992222413420677
 ./coco-images/images/COCO_train2014_000000198072.jpg,198072,A motorcyclist with helmet and neon vest taking a photograph in side mirror,NA,A motorcyclist with helmet and neon vest taking a photograph there,A motorcyclist with that taking a photograph in side mirror,NA,A person with helmet and neon vest taking a photograph in side mirror,"They are doing something here.
-",0.19317090511322021,0.0,0.16358308494091034,0.15511208772659302,0.0,0.18285584449768066,0.0030621597543358803
+",0.48292726278305054,0.0,0.40895771235227585,0.38778021931648254,0.0,0.45713961124420166,0.007655399385839701
 ./coco-images/images/COCO_train2014_000000468357.jpg,468357,A red laptop on a desk with various devices plugged in.,NA,A red laptop here with various devices plugged in.,A red laptop on a desk with that.,NA,NA,"They are doing something here.
-",0.13827461004257202,0.0,0.13830259442329407,0.09412891417741776,0.0,0.0,0.017903348430991173
+",0.34568652510643005,0.0,0.34575648605823517,0.2353222854435444,0.0,0.0,0.04475837107747793
 ./coco-images/images/COCO_train2014_000000112029.jpg,112029,Girl laying on bed with a stuffed panda posing for the camera.,NA,Girl laying there with a stuffed panda posing for the camera.,Girl laying on bed with that posing for the camera.,NA,Person laying on bed with a stuffed panda posing for the camera.,"They are doing something here.
-",0.17931270599365234,0.0,0.17899852991104126,0.08810575306415558,0.0,0.18022865056991577,0.028150254860520363
+",0.44828176498413086,0.0,0.44749632477760315,0.22026438266038895,0.0,0.45057162642478943,0.07037563715130091
 ./coco-images/images/COCO_train2014_000000205931.jpg,205931,A woman painting flowers on a red umbrella.,NA,NA,A woman painting that on a red umbrella.,NA,A person painting flowers on a red umbrella.,"They are doing something here.
-",0.16450339555740356,0.0,0.0,0.13363729417324066,0.0,0.14466087520122528,0.0
+",0.4112584888935089,0.0,0.0,0.33409323543310165,0.0,0.3616521880030632,0.0
 ./coco-images/images/COCO_train2014_000000145499.jpg,145499,A dog inside a stuffed hot dog bun on a man's lap.,NA,NA,A dog inside this on a man's lap.,NA,A dog inside a stuffed hot dog bun on a person's lap.,"They are doing something here.
-",0.15917141735553741,0.0,0.0,0.10638114809989929,0.0,0.16215060651302338,0.01912088692188263
+",0.39792854338884354,0.0,0.0,0.26595287024974823,0.0,0.40537651628255844,0.047802217304706573
 ./coco-images/images/COCO_train2014_000000528563.jpg,528563,The two friends are playing a game on the Wii console.,Some friends are playing a game on the Wii console.,NA,The two friends are playing a game on this.,They are playing a game on the Wii console.,The two people are playing a game on the Wii console.,"They are doing something here.
-",0.15552152693271637,0.15514709055423737,0.0,0.10869487375020981,0.15499117970466614,0.15471422672271729,0.05023184418678284
+",0.3888038173317909,0.3878677263855934,0.0,0.2717371843755245,0.38747794926166534,0.3867855668067932,0.1255796104669571
 ./coco-images/images/COCO_train2014_000000330652.jpg,330652,Two children lying on the booth seats of a restaurant.,Some children lying on the booth seats of a restaurant.,Two children lying there.,NA,NA,Two people lying on the booth seats of a restaurant.,"They are doing something here.
-",0.19220632314682007,0.1992017775774002,0.09294432401657104,0.0,0.0,0.16222721338272095,0.060756854712963104
+",0.48051580786705017,0.4980044439435005,0.2323608100414276,0.0,0.0,0.40556803345680237,0.15189213678240776
 ./coco-images/images/COCO_train2014_000000184930.jpg,184930,a man holding two very large teddy bears,a man holding some very large teddy bears,NA,a man holding that,NA,a person holding two very large teddy bears,"They are doing something here.
-",0.16445499658584595,0.16340340673923492,0.0,0.0565461628139019,0.0,0.14315077662467957,0.01976180262863636
+",0.41113749146461487,0.4085085168480873,0.0,0.14136540703475475,0.0,0.3578769415616989,0.0494045065715909
 ./coco-images/images/COCO_train2014_000000196545.jpg,196545,The woman is showing the toppings on her hotdog.,NA,NA,The woman is showing that.,They are showing the toppings on their hotdog.,The person is showing the toppings on their hotdog.,"They are doing something here.
-",0.15023434162139893,0.0,0.0,0.027570350095629692,0.12282632291316986,0.12880617380142212,0.013913850300014019
+",0.3755858540534973,0.0,0.0,0.06892587523907423,0.30706580728292465,0.3220154345035553,0.03478462575003505
 ./coco-images/images/COCO_train2014_000000198072.jpg,198072,A man in a helmet observes his reflection in a motorcycle side mirror.,NA,A man in a helmet observes his reflection there.,A man in a helmet observes this in a motorcycle side mirror.,NA,A person in a helmet observes their reflection in a motorcycle side mirror.,"They are doing something here.
-",0.1534218192100525,0.0,0.12187573313713074,0.16288045048713684,0.0,0.1694449484348297,0.0030621597543358803
+",0.3835545480251312,0.0,0.30468933284282684,0.4072011262178421,0.0,0.4236123710870743,0.007655399385839701
 ./coco-images/images/COCO_train2014_000000439463.jpg,439463,A woman with a wooden pizza board is near a huge oven.,NA,A woman with a wooden pizza board is there.,A woman with a wooden pizza board is near that.,NA,A person with a wooden pizza board is near a huge oven.,"They are doing something here.
-",0.14459607005119324,0.0,0.09236936271190643,0.10376343876123428,0.0,0.1436198651790619,0.007869861088693142
+",0.3614901751279831,0.0,0.23092340677976608,0.2594085969030857,0.0,0.3590496629476547,0.019674652721732855
 ./coco-images/images/COCO_train2014_000000394151.jpg,394151,The woman is standing above the two packed suitcases.,The woman is standing above some packed suitcases.,The woman is standing here.,The woman is standing above this.,They are standing above the two packed suitcases.,The person is standing above the two packed suitcases.,"They are doing something here.
-",0.1291857659816742,0.13170742988586426,0.06407490372657776,0.04994989186525345,0.12358646094799042,0.13646428287029266,0.01647210866212845
+",0.3229644149541855,0.32926857471466064,0.1601872593164444,0.12487472966313362,0.30896615236997604,0.34116070717573166,0.04118027165532112
 ./coco-images/images/COCO_train2014_000000096222.jpg,96222,A man standing in front of a cake on a table.,NA,A man standing in front of a cake there.,A man standing in front of that.,NA,A person standing in front of a cake on a table.,"They are doing something here.
-",0.10553829371929169,0.0,0.10544910281896591,0.05548520386219025,0.0,0.09260402619838715,0.024335592985153198
+",0.2638457342982292,0.0,0.2636227570474148,0.13871300965547562,0.0,0.23151006549596786,0.060838982462882996
 ./coco-images/images/COCO_train2014_000000163939.jpg,163939,A tin cup of noodles in water sitting in front of a computer.,NA,A tin cup of noodles in water sitting here.,NA,NA,NA,"They are doing something here.
-",0.21264280378818512,0.0,0.15553763508796692,0.0,0.0,0.0,0.0027088515926152468
+",0.5316070094704628,0.0,0.3888440877199173,0.0,0.0,0.0,0.006772128981538117
 ./coco-images/images/COCO_train2014_000000122731.jpg,122731,A person with face make up and a multi color umbrella and jacket.,NA,NA,NA,NA,NA,"They are doing something here.
-",0.1362791359424591,0.0,0.0,0.0,0.0,0.0,0.007092650514096022
+",0.34069783985614777,0.0,0.0,0.0,0.0,0.0,0.017731626285240054
 ./coco-images/images/COCO_train2014_000000324732.jpg,324732,A woman standing next to refrigerators holding a sign.,NA,A woman standing there holding a sign.,A woman standing next to refrigerators holding this.,NA,A person standing next to refrigerators holding a sign.,"They are doing something here.
-",0.10143294930458069,0.0,0.0,0.1157965138554573,0.0,0.08729417622089386,0.0
+",0.2535823732614517,0.0,0.0,0.28949128463864326,0.0,0.21823544055223465,0.0
 ./coco-images/images/COCO_train2014_000000075299.jpg,75299,"Two movers with their open moving van, which is parked on a city street.","Some movers with their open moving van, which is parked on a city street.","Two movers with their open moving van, which is parked there.",NA,NA,"Two people with their open moving van, which is parked on a city street.","They are doing something here.
-",0.12737363576889038,0.14308497309684753,0.11633966863155365,0.0,0.0,0.12644478678703308,0.05667033791542053
-./coco-images/images/COCO_train2014_000000184930.jpg,184930,A man is carrying two extra large teddy bears.,A man is carrying some extra large teddy bears.,NA,A man is carrying that.,They are carrying two extra large teddy bears.,A person is carrying two extra large teddy bears.,They are doing something here.,0.17136234045028687,0.16635459661483765,0.0,0.06296348571777344,0.1380654275417328,0.16361463069915771,0.01976180262863636
+",0.31843408942222595,0.35771243274211884,0.2908491715788841,0.0,0.0,0.3161119669675827,0.14167584478855133
+./coco-images/images/COCO_train2014_000000184930.jpg,184930,A man is carrying two extra large teddy bears.,A man is carrying some extra large teddy bears.,NA,A man is carrying that.,They are carrying two extra large teddy bears.,A person is carrying two extra large teddy bears.,They are doing something here.,0.42840585112571716,0.4158864915370941,0.0,0.1574087142944336,0.34516356885433197,0.4090365767478943,0.0494045065715909
