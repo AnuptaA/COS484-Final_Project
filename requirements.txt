@@ -9,7 +9,7 @@ pandas
 scipy # spatial distance cosine
 jsonlines
 requests
-open_clip_torch # for original paper
+open_clip_torch # most clip models
 transformers
 argparse
 seaborn

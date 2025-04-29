@@ -8,7 +8,6 @@ import os
 import sys
 import csv
 from argparse import ArgumentParser
-from scipy import spatial
 import numpy as np
 from torchvision.transforms.functional import pil_to_tensor
 from torch.nn import functional as F
