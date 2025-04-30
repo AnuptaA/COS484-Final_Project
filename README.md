@@ -12,7 +12,10 @@
 
 5. Run `main_PoC1.py` and `main_PoC2.py` in `/paper` to run paper's experiement
 
-6. Run `python run_models.py <model_name>` in `\B-16` to run Proof of Concept 1 from the paper
+6. Run `python run_models.py <model_name>` in `\ablations` to run Proof of Concept 1 from the paper
 with B/16 architecture (i.e. same CLIP dimension)
 
-7. For faster execution, in `\B-16` run `make clean` followed by `make all` to re-run all models
+7. For faster execution, in `\ablations` run `make clean` followed by `make all` to re-run all models
+
+# Note on running RADIO
+2.5-g uses H/14, which has the most parameters, so it will take a while to complete (~45 min/run on paper dataset).
