@@ -54,10 +54,10 @@ MODEL_PARAMS = {
     },
     'radio': {
         'MODELS': [
-            # 'radio_v2.5-g', # takes extremely long
-            # 'radio_v2.5-h', # takes extremely long
-            'radio_v2.5-l',
-            'radio_v2.5-b', # B/16
+            'radio_v2.5-g', # H/14, huge => largest model, ~632M params, ~45 min/run on CPU
+            'radio_v2.5-h', # H/16, huge => ~307M params, ~20 min/run on CPU
+            'radio_v2.5-l', # L/16
+            'radio_v2.5-b', # B/16, smallest model
         ],
         'OUTPUT_DIRECTORY': 'RADIO_results'
     }
