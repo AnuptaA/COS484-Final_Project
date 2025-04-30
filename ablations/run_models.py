@@ -16,27 +16,53 @@ from torch.nn import functional as F
 ########################################################################
 
 MODEL_PARAMS = {
+    'clip': {
+        'MODELS': [
+            'RN50',
+            'RN101',
+            'RN50x4',
+            'RN50x16',
+            'RN50x64',
+            'ViT-B-32',
+            'ViT-B-16',
+            'ViT-L-14',
+            'ViT-L-14-336',
+        ],
+        'OUTPUT_DIRECTORY': 'CLIP_results',
+        'PRETRAINED_DATASET': 'openai'
+    },
     'siglip': {
-        'MODELS': ['ViT-B-16-SigLIP', 
-          'ViT-B-16-SigLIP-256', 
-          'ViT-B-16-SigLIP-i18n-256', 
-          'ViT-B-16-SigLIP-384', 
-          'ViT-B-16-SigLIP-512'],
-        'OUTPUT_DIRECTORY': 'SigLIP_results'
+        'MODELS': [
+            'ViT-B-16-SigLIP',
+            'ViT-B-16-SigLIP-256',
+            'ViT-B-16-SigLIP-i18n-256',
+            'ViT-B-16-SigLIP-384',
+            'ViT-B-16-SigLIP-512',
+        ],
+        'OUTPUT_DIRECTORY': 'SigLIP_results',
+        'PRETRAINED_DATASET': 'webli'
     },
     'siglip2': {
-        'MODELS': ['ViT-B-16-SigLIP2',
-          'ViT-B-16-SigLIP2-256', 
-          'ViT-B-16-SigLIP2-384',
-          'ViT-B-16-SigLIP2-512'],
-        'OUTPUT_DIRECTORY': 'SigLIP2_results'
+        'MODELS': [
+            'ViT-B-16-SigLIP2',
+            'ViT-B-16-SigLIP2-256',
+            'ViT-B-16-SigLIP2-384',
+            'ViT-B-16-SigLIP2-512',
+        ],
+        'OUTPUT_DIRECTORY': 'SigLIP2_results',
+        'PRETRAINED_DATASET': 'webli'
     },
     'radio': {
-        'MODELS': ['radio_v2.5-b'],
+        'MODELS': [
+            # 'radio_v2.5-g', # takes extremely long
+            # 'radio_v2.5-h', # takes extremely long
+            'radio_v2.5-l',
+            'radio_v2.5-b', # B/16
+        ],
         'OUTPUT_DIRECTORY': 'RADIO_results'
     }
 }
-PRETRAINED_DATASET = 'webli'
+
 SAMPLE_CSV_PATH = '100samples_with_FULL.csv'
 
 ########################################################################
@@ -219,7 +245,7 @@ def run_model(model_name):
             compute_radio_und_scores(sub_model, model, adaptor, tokenizer, device, SAMPLE_CSV_PATH, model_info['OUTPUT_DIRECTORY'])
     else:
         for sub_model in model_info['MODELS']:
-            model, tokenizer, preprocess, device = initialize_and_get_model(sub_model, PRETRAINED_DATASET)
+            model, tokenizer, preprocess, device = initialize_and_get_model(sub_model, model_info['PRETRAINED_DATASET'])
             compute_und_scores(sub_model, model, tokenizer, preprocess, device, SAMPLE_CSV_PATH, model_info['OUTPUT_DIRECTORY'])
 
 #-----------------------------------------------------------------------
@@ -229,7 +255,7 @@ def main():
     model_help = "the model whose results are being generated"
 
     parser = ArgumentParser(prog=f'{sys.argv[0]}', description=desc)
-    parser.add_argument('model', type=str.lower, choices=['siglip', 'siglip2', 'radio'], help=model_help)
+    parser.add_argument('model', type=str.lower, choices=['clip', 'siglip', 'siglip2', 'radio'], help=model_help)
 
     args = vars(parser.parse_args())
     model = args.get('model')
