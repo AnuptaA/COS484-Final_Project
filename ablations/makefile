@@ -44,8 +44,8 @@ clean:
 	rm -f CLIP_results/*.csv
 	rm -f SigLIP_results/*.csv
 	rm -f SigLIP2_results/*.csv
-	rm -f RADIO_results/*.csv
+	# rm -f RADIO_results/*.csv # [COMMENTED OUT], confirm and then uncomment to delete
 	rm -f analysis/clip/*.png
 	rm -f analysis/siglip/*.png
 	rm -f analysis/siglip2/*.png
-	rm -f analysis/radio/*.png
+	# rm -f analysis/radio/*.png # [COMMENTED OUT], confirm and then uncomment to delete

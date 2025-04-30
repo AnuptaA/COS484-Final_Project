@@ -12,10 +12,46 @@
 
 5. Run `main_PoC1.py` and `main_PoC2.py` in `/paper` to run paper's experiement
 
-6. Run `python run_models.py <model_name>` in `\ablations` to run Proof of Concept 1 from the paper
-with B/16 architecture (i.e. same CLIP dimension)
+6. Run `python run_models.py <model_name>` in `/ablations` to run Proof of Concept 1 from the paper for both the depth and breadth comparisons
 
-7. For faster execution, in `\ablations` run `make clean` followed by `make all` to re-run all models
+7. For faster execution, in `/ablations` run `make clean` followed by `make all` to re-run all models. The clean for RADIO is commented out. This is on purpose because it forces you to confirm that you want to delete the file.
 
 # Note on running RADIO
 2.5-g uses H/14, which has the most parameters, so it will take a while to complete (~45 min/run on paper dataset).
+
+# Ablation (1) - Breadth
+
+For breadth, we keep the architecture constant and vary the models. For the architecture, we choose B-16 with all having 224x224 resolution.
+
+The exact models to be used for breadth comparison are:
+- ViT-B-16, (openai)
+- ViT-B-16-quickgelu, (openai)
+- ViT-B-16-SigLIP, (webli)
+- ViT-B-16-SigLIP2, (webli)
+- radio_v2.5-b, (N/A)
+
+# Ablation (2) - Depth
+
+For depth, we keep the model constant and vary model parameters such as patch size (e.g., B/16 vs H/14).
+
+The exact models to be used for depth comparison are:
+- **CLIP**
+  - ViT-B-16 (224x224)  
+  - ViT-L-14 (224x224)  
+- **CLIP with quickGELU activation**
+  - ViT-B-16-quickgelu (224x224)  
+  - ViT-L-14-quickgelu (224x224)  
+- **SigLIP**
+  - ViT-B-16-SigLIP-384 (384x384)  
+  - ViT-L-16-SigLIP-384 (384x384)  
+  - ViT-SO400M-14-SigLIP-384 (384x384)  
+- **SigLIP2**
+  - ViT-B-16-SigLIP2-384 (384x384)  
+  - ViT-L-16-SigLIP2-384 (384x384)  
+  - ViT-SO400M-16-SigLIP2-384 (384x384)  
+  - ViT-gopt-16-SigLIP2-384 (384x384)  
+- **RADIO**
+  - radio_v2.5-b
+  - radio_v2.5-l
+  - radio_v2.5-h
+  - radio_v2.5-g

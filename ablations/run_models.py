@@ -18,36 +18,31 @@ from torch.nn import functional as F
 MODEL_PARAMS = {
     'clip': {
         'MODELS': [
-            'RN50',
-            'RN101',
-            'RN50x4',
-            'RN50x16',
-            'RN50x64',
-            'ViT-B-32',
-            'ViT-B-16',
-            'ViT-L-14',
-            'ViT-L-14-336',
+            # 'ViT-B-32', # used by Sandro Pezzelle but different resolution so unused
+            'ViT-B-16', # breadth + depth (224)
+            'ViT-B-16-quickgelu', # bread + depth
+            'ViT-L-14', # depth
+            'ViT-L-14-quickgelu', # depth
         ],
         'OUTPUT_DIRECTORY': 'CLIP_results',
         'PRETRAINED_DATASET': 'openai'
     },
     'siglip': {
         'MODELS': [
-            'ViT-B-16-SigLIP',
-            'ViT-B-16-SigLIP-256',
-            'ViT-B-16-SigLIP-i18n-256',
-            'ViT-B-16-SigLIP-384',
-            'ViT-B-16-SigLIP-512',
+            'ViT-B-16-SigLIP', # breadth (224)
+            'ViT-B-16-SigLIP-384', # depth
+            'ViT-L-16-SigLIP-384', # depth
+            'ViT-SO400M-14-SigLIP-384', # depth
         ],
         'OUTPUT_DIRECTORY': 'SigLIP_results',
         'PRETRAINED_DATASET': 'webli'
     },
     'siglip2': {
         'MODELS': [
-            'ViT-B-16-SigLIP2',
-            'ViT-B-16-SigLIP2-256',
-            'ViT-B-16-SigLIP2-384',
-            'ViT-B-16-SigLIP2-512',
+            'ViT-B-16-SigLIP2', # breadth (224)
+            'ViT-B-16-SigLIP2-384', # depth
+            'ViT-L-16-SigLIP2-384', # depth
+            'ViT-SO400M-16-SigLIP2-384', # depth
         ],
         'OUTPUT_DIRECTORY': 'SigLIP2_results',
         'PRETRAINED_DATASET': 'webli'
@@ -57,7 +52,7 @@ MODEL_PARAMS = {
             'radio_v2.5-g', # H/14, huge => largest model, ~632M params, ~45 min/run on CPU
             'radio_v2.5-h', # H/16, huge => ~307M params, ~20 min/run on CPU
             'radio_v2.5-l', # L/16
-            'radio_v2.5-b', # B/16, smallest model
+            'radio_v2.5-b', # B/16, smallest model, used for breadth comparison
         ],
         'OUTPUT_DIRECTORY': 'RADIO_results'
     }

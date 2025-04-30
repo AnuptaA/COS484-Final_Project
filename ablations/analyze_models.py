@@ -28,7 +28,7 @@ def get_csv_filenames(input_path):
     
 #----------------------------------------------------------------------#
 
-def analyze_model(model_name, results_dir):
+def generate_violin_plots(model_name, results_dir):
     input_dir = CSV_DIRECTORIES[model_name]
     out_dir = os.path.join(results_dir, model_name)
     file_paths = get_csv_filenames(input_dir)
@@ -87,7 +87,7 @@ def main():
     model = args.get('model')
 
     print(f'Your selected model is {model}.')
-    analyze_model(model, OUTPUT_DIRECTORY)
+    generate_violin_plots(model, OUTPUT_DIRECTORY)
 
 #----------------------------------------------------------------------#
 
