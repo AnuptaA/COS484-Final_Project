@@ -1,4 +1,4 @@
-# “Ablating Semantic Underspecification: A Comparative Study of CLIP-Based Vision-Language Models
+# Ablating Semantic Underspecification: A Comparative Study of CLIP-Based Vision-Language Models
 <p align="center">
     <img src="paper/figure1.png" alt="Underspecification Example Scores from Original Paper">
 </p>
