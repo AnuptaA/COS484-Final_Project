@@ -1,6 +1,6 @@
 .PHONY: run_models generate_violin_plots
 
-all: run_models generate_violin_plots analyze_breadth
+all: run_models generate_violin_plots analyze_breadth analyze_depth
 
 run_models: CLIP_results SigLIP_results SigLIP2_results RADIO_results
 	python run_models.py clip
@@ -16,6 +16,13 @@ generate_violin_plots: analysis/clip analysis/siglip analysis/siglip2 analysis/r
 
 analyze_breadth:
 	python analyze_breadth.py
+
+analyze_depth:
+	python analyze_depth.py clip
+	python analyze_depth.py clip-quickgelu
+	python analyze_depth.py siglip
+	python analyze_depth.py siglip2
+	python analyze_depth.py radio
 
 # check and create results directories if nonexistent
 CLIP_results:
@@ -52,3 +59,5 @@ clean:
 	rm -f analysis/siglip/*.png
 	rm -f analysis/siglip2/*.png
 	# rm -f analysis/radio/*.png # [COMMENTED OUT], confirm and then uncomment to delete
+	rm -f analysis/*.csv
+	rm -f analysis/*.png

@@ -57,7 +57,6 @@ if __name__ == '__main__':
 #       - ViT-B-16-SigLIP2-384 (384x384)
 #       - ViT-L-16-SigLIP2-384 (384x384)
 #       - ViT-SO400M-16-SigLIP2-384 (384x384)
-#       - ViT-gopt-16-SigLIP2-384 (384x384)
 #   - RADIO:
 #       - radio_v2.5-b
 #       - radio_v2.5-l

@@ -74,7 +74,7 @@ def generate_heatmap_of_differences(results_dir):
     plt.figure(figsize=(10, 6))
     sns.heatmap(differences_matrix, annot=True, cmap='coolwarm', center=0, fmt=".3f")
 
-    plt.title("Similarity Difference from True Caption by Model and Underspecification Type", pad=20, fontsize=12)
+    plt.title("Mean Similarity Difference from True Caption by Model and Underspecification Type", pad=20, fontsize=12)
     plt.xlabel("Caption Underspecification Type", labelpad=15, fontsize=12)
     plt.ylabel("Model", labelpad=15, fontsize=12)
 
