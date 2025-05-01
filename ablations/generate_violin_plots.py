@@ -28,10 +28,15 @@ def get_csv_filenames(input_path):
     
 #----------------------------------------------------------------------#
 
-def generate_violin_plots(model_name, results_dir):
-    input_dir = CSV_DIRECTORIES[model_name]
+def generate_violin_plots(model_name, exp_name, results_dir):
+    input_dir = os.path.join(f"{exp_name}_results", CSV_DIRECTORIES[model_name])
     out_dir = os.path.join(results_dir, model_name)
     file_paths = get_csv_filenames(input_dir)
+
+    if exp_name == "inc":
+        exp_title = "Incorrectness"
+    else:
+        exp_title = "Underspecification"
 
     sim_cols = [
         'sim_original',
@@ -60,10 +65,10 @@ def generate_violin_plots(model_name, results_dir):
         palette = sns.color_palette("viridis", len(sim_cols))
 
         sns.violinplot(x='type', y='score', hue='type', data=melted, palette=palette, legend=False)
-        plt.title(f'Violin Plot of Similarity Scores — {name}')
+        plt.title(f'Violin Plot of Similarity Scores for {exp_title} — {name}')
         plt.ylabel('CLIPScore')
         plt.xlabel('')
-        plt.ylim(0, 1.4)
+        plt.ylim(-0.1, 1.4)
         plt.xticks(rotation=30, ha='right')
 
         plt.tight_layout()
@@ -79,16 +84,21 @@ def generate_violin_plots(model_name, results_dir):
 
 def main():
     desc = "Helper module for analyzing output CSVs"
-    help = "the model whose results are to be analyzed"
+    help_model = "the model whose results are to be analyzed"
+    help_exp = "the proof of concept experiment to be analyzed"
 
     parser = ArgumentParser(prog=f'{sys.argv[0]}', description=desc)
-    parser.add_argument('model', type=str.lower, choices=['clip', 'siglip', 'siglip2', 'radio'], help=help)
+    parser.add_argument('exp', type=str.lower, choices=['und', 'inc'], help=help_exp)
+    parser.add_argument('model', type=str.lower, choices=['clip', 'siglip', 'siglip2', 'radio'], help=help_model)
     
     args = vars(parser.parse_args())
+    exp = args.get('exp')
     model = args.get('model')
 
-    print(f'Your selected model is {model}.')
-    generate_violin_plots(model, OUTPUT_DIRECTORY)
+    output_dir = exp + "_analysis"
+
+    print(f'Your selected model is {model} for the {exp} proof of concept.')
+    generate_violin_plots(model, exp, output_dir)
 
 #----------------------------------------------------------------------#
 

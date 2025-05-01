@@ -40,7 +40,7 @@ OUTPUT_DIRECTORY = 'analysis'
 
 #----------------------------------------------------------------------#
 
-def generate_depth_lineplots(model_family, results_dir):
+def generate_depth_lineplots(model_family, exp_name, results_dir):
     csv_paths = CSV_DIRECTORIES[model_family]
 
     cols = {
@@ -56,7 +56,7 @@ def generate_depth_lineplots(model_family, results_dir):
     averages_matrix = pd.DataFrame(index=csv_paths.keys(), columns=cols.keys())
 
     for model_name, csv_path in csv_paths.items():
-        df = pd.read_csv(csv_path)
+        df = pd.read_csv(os.path.join(f"{exp_name}_results", csv_path))
         for col in cols.keys():
             vals = df[col].dropna()
             vals = vals[vals != 0]
@@ -68,8 +68,13 @@ def generate_depth_lineplots(model_family, results_dir):
         averages = averages_matrix.loc[model_name]
         plt.plot([cols[col] for col in cols], averages, marker='o', label=model_name)
 
-    plt.title(f"Average Similarity Score by Caption for {model_family}")
-    plt.xlabel("Caption Type")
+    if exp_name == "inc":
+        exp_title = "Incorrectness"
+    else:
+        exp_title = "Underspecification"
+
+    plt.title(f"Average Similarity Score by Caption for {model_family} for {exp_title} Proof of Concept")
+    plt.xlabel(f"{exp_title} Type")
     plt.ylabel("Average Similarity Score")
     plt.ylim(0, 1.1)
     plt.legend(title="Model")
@@ -85,16 +90,21 @@ def generate_depth_lineplots(model_family, results_dir):
 
 def main():
     desc = "Helper module for analyzing CSVs with line plots"
-    help = "the family whose results are to be analyzed"
+    help_model = "the family whose results are to be analyzed"
+    help_exp = "the proof of concept experiment to be analyzed"
 
     parser = ArgumentParser(prog=f'{sys.argv[0]}', description=desc)
-    parser.add_argument('family', type=str.lower, choices=['clip', 'clip-quickgelu', 'siglip', 'siglip2', 'radio'], help=help)
+    parser.add_argument('exp', type=str.lower, choices=['und', 'inc'], help=help_exp)
+    parser.add_argument('family', type=str.lower, choices=['clip', 'clip-quickgelu', 'siglip', 'siglip2', 'radio'], help=help_model)
     
     args = vars(parser.parse_args())
+    exp = args.get('exp')
     family = args.get('family')
 
-    print(f"Generating depth line plot for family: {family}")
-    generate_depth_lineplots(family, OUTPUT_DIRECTORY)
+    output_dir = exp + "_analysis"
+
+    print(f"Generating depth line plot for {family} family for {exp} proof of concept.")
+    generate_depth_lineplots(family, exp, output_dir)
 
 #----------------------------------------------------------------------#
 

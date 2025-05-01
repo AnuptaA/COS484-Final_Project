@@ -2,6 +2,7 @@
 
 import os
 import sys
+from argparse import ArgumentParser
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -23,7 +24,7 @@ OUTPUT_DIRECTORY = 'analysis'
 ########################################################################
 #----------------------------------------------------------------------#
 
-def generate_averages_for_captions(results_dir):
+def generate_averages_for_captions(exp_name, results_dir):
     sim_cols = [
         'sim_original',
         'sim_quantity',
@@ -37,7 +38,7 @@ def generate_averages_for_captions(results_dir):
     averages_matrix = pd.DataFrame(index=CSV_DIRECTORIES.keys(), columns=sim_cols)
 
     for model_name, csv_path in CSV_DIRECTORIES.items():
-        df = pd.read_csv(csv_path)
+        df = pd.read_csv(os.path.join(f"{exp_name}_results", csv_path))
         for col in sim_cols:
             vals = df[col].dropna()
             vals = vals[vals != 0]
@@ -52,7 +53,7 @@ def generate_averages_for_captions(results_dir):
 
 #----------------------------------------------------------------------#
     
-def generate_heatmap_of_differences(results_dir):
+def generate_heatmap_of_differences(exp_name, avg_mat_path, results_dir):
     cols = {
         'Quantity': 'sim_quantity',
         'Location': 'sim_location',
@@ -62,7 +63,7 @@ def generate_heatmap_of_differences(results_dir):
         'Full': 'sim_full'
     }
 
-    averages_matrix = pd.read_csv(AVERAGES_MATRIX_PATH, index_col=0)
+    averages_matrix = pd.read_csv(avg_mat_path, index_col=0)
     differences_matrix = pd.DataFrame(index=averages_matrix.index, columns=cols)
 
     for model_name in averages_matrix.index:
@@ -74,8 +75,13 @@ def generate_heatmap_of_differences(results_dir):
     plt.figure(figsize=(10, 6))
     sns.heatmap(differences_matrix, annot=True, cmap='coolwarm', center=0, fmt=".3f")
 
-    plt.title("Mean Similarity Difference from True Caption by Model and Underspecification Type", pad=20, fontsize=12)
-    plt.xlabel("Caption Underspecification Type", labelpad=15, fontsize=12)
+    if exp_name == "inc":
+        exp_title = "Incorrectness"
+    else:
+        exp_title = "Underspecification"
+
+    plt.title(f"Mean Similarity Difference from True Caption by Model and {exp_title} Type", pad=20, fontsize=12)
+    plt.xlabel(f"Caption {exp_title} Type", labelpad=15, fontsize=12)
     plt.ylabel("Model", labelpad=15, fontsize=12)
 
     plt.xticks(rotation=30)
@@ -91,8 +97,21 @@ def generate_heatmap_of_differences(results_dir):
 #----------------------------------------------------------------------#
 
 def main():
-    generate_averages_for_captions(OUTPUT_DIRECTORY)
-    generate_heatmap_of_differences(OUTPUT_DIRECTORY)
+    desc = "Helper module for analyzing CSVs with heatmap"
+    help_exp = "the proof of concept experiment to be analyzed"
+
+    parser = ArgumentParser(prog=f'{sys.argv[0]}', description=desc)
+    parser.add_argument('exp', type=str.lower, choices=['und', 'inc'], help=help_exp)
+    
+    args = vars(parser.parse_args())
+    exp = args.get('exp')
+
+    output_dir = exp + "_analysis"
+    avg_mat_path = exp + "_analysis/breadth_caption_averages.csv"
+
+    print(f"Generating breadth heatmap for {exp} proof of concept.")
+    generate_averages_for_captions(exp, output_dir)
+    generate_heatmap_of_differences(exp, avg_mat_path, output_dir)
 
 #----------------------------------------------------------------------#
 
