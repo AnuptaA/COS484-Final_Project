@@ -1,6 +1,6 @@
-.PHONY: run_models analyze_models
+.PHONY: run_models generate_violin_plots
 
-all: run_models analyze_models
+all: run_models generate_violin_plots analyze_breadth
 
 run_models: CLIP_results SigLIP_results SigLIP2_results RADIO_results
 	python run_models.py clip
@@ -8,11 +8,14 @@ run_models: CLIP_results SigLIP_results SigLIP2_results RADIO_results
 	python run_models.py siglip
 	python run_models.py siglip2
 
-analyze_models: analysis/clip analysis/siglip analysis/siglip2 analysis/radio
-	python analyze_models.py clip
-	python analyze_models.py radio
-	python analyze_models.py siglip
-	python analyze_models.py siglip2
+generate_violin_plots: analysis/clip analysis/siglip analysis/siglip2 analysis/radio
+	python generate_violin_plots.py clip
+	python generate_violin_plots.py radio
+	python generate_violin_plots.py siglip
+	python generate_violin_plots.py siglip2
+
+analyze_breadth:
+	python analyze_breadth.py
 
 # check and create results directories if nonexistent
 CLIP_results:
