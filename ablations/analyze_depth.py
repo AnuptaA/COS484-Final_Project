@@ -71,6 +71,7 @@ def generate_depth_lineplots(model_family, results_dir):
     plt.title(f"Average Similarity Score by Caption for {model_family}")
     plt.xlabel("Caption Type")
     plt.ylabel("Average Similarity Score")
+    plt.ylim(0, 1.1)
     plt.legend(title="Model")
     plt.grid(True)
     plt.tight_layout()

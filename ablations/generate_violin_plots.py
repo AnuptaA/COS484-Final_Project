@@ -63,6 +63,7 @@ def generate_violin_plots(model_name, results_dir):
         plt.title(f'Violin Plot of Similarity Scores — {name}')
         plt.ylabel('CLIPScore')
         plt.xlabel('')
+        plt.ylim(0, 1.4)
         plt.xticks(rotation=30, ha='right')
 
         plt.tight_layout()

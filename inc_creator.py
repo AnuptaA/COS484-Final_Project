@@ -7,42 +7,42 @@ import time
 
 load_dotenv()
 
-openai.api_key = os.getenv('OPENAI_API_KEY')
+# openai.api_key = os.getenv('OPENAI_API_KEY')
 
 CATEGORIES = ["quantity","location","object","gender-number","gender","full"]
 
 def make_caption_incorrect(caption, category):
     prompt = ""
     if category == CATEGORIES[0]:
-        prompt = f"""Given this caption: {caption}
-        Alter the caption by changing the quantity of the subject of the sentence.
-        For example, for the sentence "Three women are having a picnic at the park.",\
-        the sentence might change to "Five women are having a picnic at the park." """
+        prompt = f"""Given this caption: "{caption}"
+Alter the caption by changing the quantity of the subject of the sentence. Only output the altered caption and nothing else.
+For example, for the sentence "Three women are having a picnic at the park.", \
+the sentence might change to "Five women are having a picnic at the park." """
     elif category == CATEGORIES[1]:
-        prompt = f"""Given this caption: {caption}
-        Alter the caption by changing the location of the sentence.
-        For example, for the sentence "Three women are having a picnic at the park.",\
-        the sentence might change to "Three women are having a picnic at the house." """
+        prompt = f"""Given this caption: "{caption}"
+Alter the caption by changing the location of the sentence. Only output the altered caption and nothing else.
+For example, for the sentence "Three women are having a picnic at the park.", \
+the sentence might change to "Three women are having a picnic at the house." """
     elif category == CATEGORIES[2]:
-        prompt = f"""Given this caption: {caption}
-        Alter the caption by changing the object of the sentence.
-        For example, for the sentence "Three women are having a picnic at the park.",\
-        the sentence might change to "Three women are having a basketball game at the park." """
+        prompt = f"""Given this caption: "{caption}"
+Alter the caption by changing the object of the sentence. Only output the altered caption and nothing else.
+For example, for the sentence "Three women are having a picnic at the park.", \
+the sentence might change to "Three women are having a basketball game at the park." """
     elif category == CATEGORIES[3]:
-        prompt = f"""Given this caption: {caption}
-        Alter the caption by changing the gender and quantity of the subject of the sentence.
-        For example, for the sentence "Three women are having a picnic at the park.",\
-        the sentence might change to "Four men are having a picnic at the park." """
+        prompt = f"""Given this caption: "{caption}"
+Alter the caption by changing the gender and quantity of the subject of the sentence. Only output the altered caption and nothing else.
+For example, for the sentence "Three women are having a picnic at the park.", \
+the sentence might change to "Four men are having a picnic at the park." """
     elif category == CATEGORIES[4]:
-        prompt = f"""Given this caption: {caption}
-        Alter the caption by changing the gender of the subject of the sentence.
-        For example, for the sentence "Three women are having a picnic at the park.",\
-        the sentence might change to "Three men are having a picnic at the park." """
+        prompt = f"""Given this caption: "{caption}"
+Alter the caption by changing the gender of the subject of the sentence. Only output the altered caption and nothing else.
+For example, for the sentence "Three women are having a picnic at the park.", \
+the sentence might change to "Three men are having a picnic at the park." """
     elif category == CATEGORIES[5]:
-        prompt = f"""Given this caption: {caption}
-        Alter the caption by changing the gender and quantity of the subject, the location, and the object of the sentence.
-        For example, for the sentence "Three women are having a picnic at the park.",\
-        the sentence might change to "Four men are having a basketball game at the house." """
+        prompt = f"""Given this caption: "{caption}"
+Alter the caption by changing the gender and quantity of the subject, the location, and the object of the sentence. Only output the altered caption and nothing else.
+For example, for the sentence "Three women are having a picnic at the park.", \
+the sentence might change to "Four men are having a basketball game at the house." """
     else:
         print('Invalid Category: "' + category + '"')
         return False
@@ -67,12 +67,10 @@ inc = df[["imageURL","imageID","original"]]
 # Iterate over each row in the DataFrame with a delay
 for index, row in inc.iterrows():
     for category in CATEGORIES:
-        if df.loc[index, ("und_" + category)] == "NA":
+        if type(df.loc[index, ("und_" + category)]) is float:
             inc.loc[index, ("inc_" + category)] = "NA"
         else:
-            inc.loc[index, ("inc_" + category)] = make_caption_incorrect(row['original'], category)
-            print(inc.loc[index, ("inc_" + category)])
+            inc.loc[index, ("inc_" + category)] = make_caption_incorrect(inc.loc[index, ("original")], category)
             time.sleep(1)  # Introduce a delay of 1 second
-    break
 
 inc.to_csv('INC_100_samples.csv', index=False)
