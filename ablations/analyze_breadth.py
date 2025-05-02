@@ -10,12 +10,20 @@ import seaborn as sns
 #----------------------------------------------------------------------#
 ########################################################################
 
-CSV_DIRECTORIES = {
-    'clip': 'CLIP_results/ViT-B-16_UND_scores_100_samples.csv',
-    'clip-quickgelu': 'CLIP_results/ViT-B-16-quickgelu_UND_scores_100_samples.csv',
-    'siglip': 'SigLIP_results/ViT-B-16-SigLIP_UND_scores_100_samples.csv',
-    'siglip2': 'SigLIP2_results/ViT-B-16-SigLIP2_UND_scores_100_samples.csv',
-    'radio': 'RADIO_results/radio_v2.5-b_UND_scores_100_samples.csv'
+UND_CSV_DIRECTORIES = {
+    'clip': 'CLIP_results/ViT-B-16_und_scores_100_samples.csv',
+    'clip-quickgelu': 'CLIP_results/ViT-B-16-quickgelu_und_scores_100_samples.csv',
+    'siglip': 'SigLIP_results/ViT-B-16-SigLIP_und_scores_100_samples.csv',
+    'siglip2': 'SigLIP2_results/ViT-B-16-SigLIP2_und_scores_100_samples.csv',
+    'radio': 'RADIO_results/radio_v2.5-b_und_scores_100_samples.csv'
+}
+
+INC_CSV_DIRECTORIES = {
+    'clip': 'CLIP_results/ViT-B-16_inc_scores_100_samples.csv',
+    'clip-quickgelu': 'CLIP_results/ViT-B-16-quickgelu_inc_scores_100_samples.csv',
+    'siglip': 'SigLIP_results/ViT-B-16-SigLIP_inc_scores_100_samples.csv',
+    'siglip2': 'SigLIP2_results/ViT-B-16-SigLIP2_inc_scores_100_samples.csv',
+    'radio': 'RADIO_results/radio_v2.5-b_inc_scores_100_samples.csv'
 }
 
 AVERAGES_MATRIX_PATH = 'analysis/breadth_caption_averages.csv'
@@ -35,9 +43,14 @@ def generate_averages_for_captions(exp_name, results_dir):
         'sim_full'
     ]
 
-    averages_matrix = pd.DataFrame(index=CSV_DIRECTORIES.keys(), columns=sim_cols)
+    if exp_name == "inc":
+        csv_dict = INC_CSV_DIRECTORIES
+    else:
+        csv_dict = UND_CSV_DIRECTORIES
 
-    for model_name, csv_path in CSV_DIRECTORIES.items():
+    averages_matrix = pd.DataFrame(index=csv_dict.keys(), columns=sim_cols)
+
+    for model_name, csv_path in csv_dict.items():
         df = pd.read_csv(os.path.join(f"{exp_name}_results", csv_path))
         for col in sim_cols:
             vals = df[col].dropna()

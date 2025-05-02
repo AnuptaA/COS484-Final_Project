@@ -110,17 +110,22 @@ def compute_und_scores(exp_name, model_name, model, tokenizer, preprocess, devic
     with open(csv_path, 'r') as f:
         content = f.readlines()
 
-    print(f"Computing und_scores for model {model_name}")
+    print(f"Computing {exp_name}_scores for model {model_name}")
     print('----------------------------------------------------------')
 
-    output_path = f'{out_dir}/{model_name}_UND_scores_100_samples.csv'
+    if exp_name == "inc":
+        split_char = ","
+    else:
+        split_char = ";"
+
+    output_path = f'{out_dir}/{model_name}_{exp_name}_scores_100_samples.csv'
     with open(output_path, 'w', newline='') as myoutput:
         myoutput.write(f'imageURL,imageID,original,{exp_name}_quantity,{exp_name}_location,{exp_name}_object,{exp_name}_gender-number,{exp_name}_gender,{exp_name}_full,sim_original,sim_quantity,sim_location,sim_object,sim_gender-number,sim_gender,sim_full\n')
         writer = csv.writer(myoutput)
         for c, l in enumerate(content):
             if c == 0:
                 continue
-            l = l.split(';')
+            l = l.split(split_char)
             imageURL = str(l[0])
             imageID = str(l[1])
 
@@ -173,17 +178,22 @@ def compute_radio_und_scores(exp_name, model_name, model, adaptor, tokenizer, de
     with open(csv_path, 'r') as f:
         content = f.readlines()
 
-    print(f"Computing und_scores for model {model_name}")
+    print(f"Computing {exp_name}_scores for model {model_name}")
     print('----------------------------------------------------------')
 
-    output_path = f'{out_dir}/{model_name}_UND_scores_100_samples.csv'
+    if exp_name == "inc":
+        split_char = ","
+    else:
+        split_char = ";"
+
+    output_path = f'{out_dir}/{model_name}_{exp_name}_scores_100_samples.csv'
     with open(output_path, 'w', newline='') as myoutput:
         myoutput.write(f'imageURL,imageID,original,{exp_name}_quantity,{exp_name}_location,{exp_name}_object,{exp_name}_gender-number,{exp_name}_gender,{exp_name}_full,sim_original,sim_quantity,sim_location,sim_object,sim_gender-number,sim_gender,sim_full\n')
         writer = csv.writer(myoutput)
         for c, l in enumerate(content):
             if c == 0:
                 continue
-            l = l.split(';')
+            l = l.split(split_char)
             imageURL = str(l[0])
             imageID = str(l[1])
 

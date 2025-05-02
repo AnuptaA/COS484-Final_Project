@@ -9,30 +9,57 @@ import matplotlib.pyplot as plt
 #----------------------------------------------------------------------#
 ########################################################################
 
-CSV_DIRECTORIES = {
+UND_CSV_DIRECTORIES = {
     'clip': {
-        'ViT-B-16': 'CLIP_results/ViT-B-16_UND_scores_100_samples.csv',
-        'ViT-L-14': 'CLIP_results/ViT-L-14_UND_scores_100_samples.csv',
+        'ViT-B-16': 'CLIP_results/ViT-B-16_und_scores_100_samples.csv',
+        'ViT-L-14': 'CLIP_results/ViT-L-14_und_scores_100_samples.csv',
     },
     'clip-quickgelu': {
-        'ViT-B-16-quickgelu': 'CLIP_results/ViT-B-16-quickgelu_UND_scores_100_samples.csv',
-        'ViT-L-14-quickgelu': 'CLIP_results/ViT-L-14-quickgelu_UND_scores_100_samples.csv',
+        'ViT-B-16-quickgelu': 'CLIP_results/ViT-B-16-quickgelu_und_scores_100_samples.csv',
+        'ViT-L-14-quickgelu': 'CLIP_results/ViT-L-14-quickgelu_und_scores_100_samples.csv',
     },
     'siglip': {
-        'ViT-B-16-SigLIP-384': 'SigLIP_results/ViT-B-16-SigLIP-384_UND_scores_100_samples.csv',
-        'ViT-L-16-SigLIP-384': 'SigLIP_results/ViT-L-16-SigLIP-384_UND_scores_100_samples.csv',
-        'ViT-SO400M-14-SigLIP-384': 'SigLIP_results/ViT-SO400M-14-SigLIP-384_UND_scores_100_samples.csv',
+        'ViT-B-16-SigLIP-384': 'SigLIP_results/ViT-B-16-SigLIP-384_und_scores_100_samples.csv',
+        'ViT-L-16-SigLIP-384': 'SigLIP_results/ViT-L-16-SigLIP-384_und_scores_100_samples.csv',
+        'ViT-SO400M-14-SigLIP-384': 'SigLIP_results/ViT-SO400M-14-SigLIP-384_und_scores_100_samples.csv',
     },
     'siglip2': {
-        'ViT-B-16-SigLIP2-384': 'SigLIP2_results/ViT-B-16-SigLIP2-384_UND_scores_100_samples.csv',
-        'ViT-L-16-SigLIP2-384': 'SigLIP2_results/ViT-L-16-SigLIP2-384_UND_scores_100_samples.csv',
-        'ViT-SO400M-16-SigLIP2-384': 'SigLIP2_results/ViT-SO400M-16-SigLIP2-384_UND_scores_100_samples.csv',
+        'ViT-B-16-SigLIP2-384': 'SigLIP2_results/ViT-B-16-SigLIP2-384_und_scores_100_samples.csv',
+        'ViT-L-16-SigLIP2-384': 'SigLIP2_results/ViT-L-16-SigLIP2-384_und_scores_100_samples.csv',
+        'ViT-SO400M-16-SigLIP2-384': 'SigLIP2_results/ViT-SO400M-16-SigLIP2-384_und_scores_100_samples.csv',
     },
     'radio': {
-        'radio_v2.5-b': 'RADIO_results/radio_v2.5-b_UND_scores_100_samples.csv',
-        'radio_v2.5-g': 'RADIO_results/radio_v2.5-g_UND_scores_100_samples.csv',
-        'radio_v2.5-h': 'RADIO_results/radio_v2.5-h_UND_scores_100_samples.csv',
-        'radio_v2.5-l': 'RADIO_results/radio_v2.5-l_UND_scores_100_samples.csv',
+        'radio_v2.5-b': 'RADIO_results/radio_v2.5-b_und_scores_100_samples.csv',
+        'radio_v2.5-g': 'RADIO_results/radio_v2.5-g_und_scores_100_samples.csv',
+        'radio_v2.5-h': 'RADIO_results/radio_v2.5-h_und_scores_100_samples.csv',
+        'radio_v2.5-l': 'RADIO_results/radio_v2.5-l_und_scores_100_samples.csv',
+    }
+}
+
+INC_CSV_DIRECTORIES = {
+    'clip': {
+        'ViT-B-16': 'CLIP_results/ViT-B-16_inc_scores_100_samples.csv',
+        'ViT-L-14': 'CLIP_results/ViT-L-14_inc_scores_100_samples.csv',
+    },
+    'clip-quickgelu': {
+        'ViT-B-16-quickgelu': 'CLIP_results/ViT-B-16-quickgelu_inc_scores_100_samples.csv',
+        'ViT-L-14-quickgelu': 'CLIP_results/ViT-L-14-quickgelu_inc_scores_100_samples.csv',
+    },
+    'siglip': {
+        'ViT-B-16-SigLIP-384': 'SigLIP_results/ViT-B-16-SigLIP-384_inc_scores_100_samples.csv',
+        'ViT-L-16-SigLIP-384': 'SigLIP_results/ViT-L-16-SigLIP-384_inc_scores_100_samples.csv',
+        'ViT-SO400M-14-SigLIP-384': 'SigLIP_results/ViT-SO400M-14-SigLIP-384_inc_scores_100_samples.csv',
+    },
+    'siglip2': {
+        'ViT-B-16-SigLIP2-384': 'SigLIP2_results/ViT-B-16-SigLIP2-384_inc_scores_100_samples.csv',
+        'ViT-L-16-SigLIP2-384': 'SigLIP2_results/ViT-L-16-SigLIP2-384_inc_scores_100_samples.csv',
+        'ViT-SO400M-16-SigLIP2-384': 'SigLIP2_results/ViT-SO400M-16-SigLIP2-384_inc_scores_100_samples.csv',
+    },
+    'radio': {
+        'radio_v2.5-b': 'RADIO_results/radio_v2.5-b_inc_scores_100_samples.csv',
+        'radio_v2.5-g': 'RADIO_results/radio_v2.5-g_inc_scores_100_samples.csv',
+        'radio_v2.5-h': 'RADIO_results/radio_v2.5-h_inc_scores_100_samples.csv',
+        'radio_v2.5-l': 'RADIO_results/radio_v2.5-l_inc_scores_100_samples.csv',
     }
 }
 
@@ -41,7 +68,10 @@ OUTPUT_DIRECTORY = 'analysis'
 #----------------------------------------------------------------------#
 
 def generate_depth_lineplots(model_family, exp_name, results_dir):
-    csv_paths = CSV_DIRECTORIES[model_family]
+    if exp_name == "inc":
+        csv_paths = INC_CSV_DIRECTORIES[model_family]
+    else:
+        csv_paths = UND_CSV_DIRECTORIES[model_family]
 
     cols = {
         'sim_original': 'Original',
