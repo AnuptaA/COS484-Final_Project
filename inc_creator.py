@@ -7,7 +7,8 @@ import time
 
 load_dotenv()
 
-# openai.api_key = os.getenv('OPENAI_API_KEY')
+api_key = os.getenv('OPENAI_API_KEY')
+client = openai.OpenAI(api_key=api_key)
 
 CATEGORIES = ["quantity","location","object","gender-number","gender","full"]
 
@@ -47,7 +48,7 @@ the sentence might change to "Four men are having a basketball game at the house
         print('Invalid Category: "' + category + '"')
         return False
 
-    response = openai.ChatCompletion.create(
+    response = client.chat.completions.create(
         model="gpt-4",
         messages=[
             {"role": "user", "content": prompt}
@@ -57,8 +58,8 @@ the sentence might change to "Four men are having a basketball game at the house
         stop=None,
         temperature=0.7
     )
-    
-    return response.choices[0].message['content'].strip()
+
+    return response.choices[0].message.content.strip()
 
 # train data pre-processing
 df = pd.read_csv('paper/clip_UND_scores_100_samples.csv')
@@ -71,6 +72,7 @@ for index, row in inc.iterrows():
             inc.loc[index, ("inc_" + category)] = "NA"
         else:
             inc.loc[index, ("inc_" + category)] = make_caption_incorrect(inc.loc[index, ("original")], category)
+            print(inc.loc[index, ("inc_" + category)])
             time.sleep(1)  # Introduce a delay of 1 second
 
-inc.to_csv('INC_100_samples.csv', index=False)
+inc.to_csv('init_inc_100_samples.csv', index=False)

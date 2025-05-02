@@ -58,7 +58,8 @@ MODEL_PARAMS = {
     }
 }
 
-SAMPLE_CSV_PATH = '100samples_with_FULL.csv'
+UND_SAMPLE_CSV_PATH = '100samples_with_FULL.csv'
+INC_SAMPLE_CSV_PATH = 'inc_100_samples.csv'
 
 ########################################################################
 #-----------------------------------------------------------------------
@@ -104,7 +105,7 @@ def compute_rad_sim_score(caption, image_summary, adaptor, tokenizer, device):
 
 #-----------------------------------------------------------------------
 
-def compute_und_scores(model_name, model, tokenizer, preprocess, device, csv_path, out_dir):
+def compute_und_scores(exp_name, model_name, model, tokenizer, preprocess, device, csv_path, out_dir):
     # read csv contents
     with open(csv_path, 'r') as f:
         content = f.readlines()
@@ -114,7 +115,7 @@ def compute_und_scores(model_name, model, tokenizer, preprocess, device, csv_pat
 
     output_path = f'{out_dir}/{model_name}_UND_scores_100_samples.csv'
     with open(output_path, 'w', newline='') as myoutput:
-        myoutput.write('imageURL,imageID,original,und_quantity,und_location,und_object,und_gender-number,und_gender,und_full,sim_original,sim_quantity,sim_location,sim_object,sim_gender-number,sim_gender,sim_full\n')
+        myoutput.write(f'imageURL,imageID,original,{exp_name}_quantity,{exp_name}_location,{exp_name}_object,{exp_name}_gender-number,{exp_name}_gender,{exp_name}_full,sim_original,sim_quantity,sim_location,sim_object,sim_gender-number,sim_gender,sim_full\n')
         writer = csv.writer(myoutput)
         for c, l in enumerate(content):
             if c == 0:
@@ -167,7 +168,7 @@ def compute_und_scores(model_name, model, tokenizer, preprocess, device, csv_pat
 
 #-----------------------------------------------------------------------
 
-def compute_radio_und_scores(model_name, model, adaptor, tokenizer, device, csv_path, out_dir):
+def compute_radio_und_scores(exp_name, model_name, model, adaptor, tokenizer, device, csv_path, out_dir):
     # read csv contents
     with open(csv_path, 'r') as f:
         content = f.readlines()
@@ -177,7 +178,7 @@ def compute_radio_und_scores(model_name, model, adaptor, tokenizer, device, csv_
 
     output_path = f'{out_dir}/{model_name}_UND_scores_100_samples.csv'
     with open(output_path, 'w', newline='') as myoutput:
-        myoutput.write('imageURL,imageID,original,und_quantity,und_location,und_object,und_gender-number,und_gender,und_full,sim_original,sim_quantity,sim_location,sim_object,sim_gender-number,sim_gender,sim_full\n')
+        myoutput.write(f'imageURL,imageID,original,{exp_name}_quantity,{exp_name}_location,{exp_name}_object,{exp_name}_gender-number,{exp_name}_gender,{exp_name}_full,sim_original,sim_quantity,sim_location,sim_object,sim_gender-number,sim_gender,sim_full\n')
         writer = csv.writer(myoutput)
         for c, l in enumerate(content):
             if c == 0:
@@ -232,31 +233,41 @@ def compute_radio_und_scores(model_name, model, adaptor, tokenizer, device, csv_
 
 #-----------------------------------------------------------------------
 
-def run_model(model_name):
+def run_model(exp_name, model_name):
     model_info = MODEL_PARAMS[model_name]
+    if exp_name == "inc":
+        sample_path = INC_SAMPLE_CSV_PATH
+    else:
+        sample_path = UND_SAMPLE_CSV_PATH
+
+    out_dir = os.path.join(f"{exp_name}_results", model_info['OUTPUT_DIRECTORY'])
+
     if model_name == 'radio':
         for sub_model in model_info['MODELS']:
             model, adaptor, tokenizer, device = get_radio_model(sub_model)
-            compute_radio_und_scores(sub_model, model, adaptor, tokenizer, device, SAMPLE_CSV_PATH, model_info['OUTPUT_DIRECTORY'])
+            compute_radio_und_scores(exp_name, sub_model, model, adaptor, tokenizer, device, sample_path, out_dir)
     else:
         for sub_model in model_info['MODELS']:
             model, tokenizer, preprocess, device = initialize_and_get_model(sub_model, model_info['PRETRAINED_DATASET'])
-            compute_und_scores(sub_model, model, tokenizer, preprocess, device, SAMPLE_CSV_PATH, model_info['OUTPUT_DIRECTORY'])
+            compute_und_scores(exp_name, sub_model, model, tokenizer, preprocess, device, sample_path, out_dir)
 
 #-----------------------------------------------------------------------
 
 def main():
     desc = "Helper module for running models to generate CSVs in the same format as main_PoC1.py"
-    model_help = "the model whose results are being generated"
+    help_model = "the model whose results are being generated"
+    help_exp = "the proof of concept experiment to be analyzed"
 
     parser = ArgumentParser(prog=f'{sys.argv[0]}', description=desc)
-    parser.add_argument('model', type=str.lower, choices=['clip', 'siglip', 'siglip2', 'radio'], help=model_help)
+    parser.add_argument('exp', type=str.lower, choices=['und', 'inc'], help=help_exp)
+    parser.add_argument('model', type=str.lower, choices=['clip', 'siglip', 'siglip2', 'radio'], help=help_model)
 
     args = vars(parser.parse_args())
+    exp = args.get('exp')
     model = args.get('model')
 
-    print(f'Your selected model is {model}.')
-    run_model(model)
+    print(f'Your selected model is {model}. Your selected experiment is the {exp} proof of concept.')
+    run_model(exp, model)
 
 #-----------------------------------------------------------------------
 
