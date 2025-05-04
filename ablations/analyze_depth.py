@@ -18,6 +18,12 @@ UND_CSV_DIRECTORIES = {
         'ViT-B-16-quickgelu': 'CLIP_results/ViT-B-16-quickgelu_und_scores_100_samples.csv',
         'ViT-L-14-quickgelu': 'CLIP_results/ViT-L-14-quickgelu_und_scores_100_samples.csv',
     },
+    'clip_and_clip-quickgelu': {
+        'ViT-B-16': 'CLIP_results/ViT-B-16_und_scores_100_samples.csv',
+        'ViT-L-14': 'CLIP_results/ViT-L-14_und_scores_100_samples.csv',
+        'ViT-B-16-quickgelu': 'CLIP_results/ViT-B-16-quickgelu_und_scores_100_samples.csv',
+        'ViT-L-14-quickgelu': 'CLIP_results/ViT-L-14-quickgelu_und_scores_100_samples.csv',
+    },
     'siglip': {
         'ViT-B-16-SigLIP-384': 'SigLIP_results/ViT-B-16-SigLIP-384_und_scores_100_samples.csv',
         'ViT-L-16-SigLIP-384': 'SigLIP_results/ViT-L-16-SigLIP-384_und_scores_100_samples.csv',
@@ -42,6 +48,12 @@ INC_CSV_DIRECTORIES = {
         'ViT-L-14': 'CLIP_results/ViT-L-14_inc_scores_100_samples.csv',
     },
     'clip-quickgelu': {
+        'ViT-B-16-quickgelu': 'CLIP_results/ViT-B-16-quickgelu_inc_scores_100_samples.csv',
+        'ViT-L-14-quickgelu': 'CLIP_results/ViT-L-14-quickgelu_inc_scores_100_samples.csv',
+    },
+    'clip_and_clip-quickgelu': {
+        'ViT-B-16': 'CLIP_results/ViT-B-16_inc_scores_100_samples.csv',
+        'ViT-L-14': 'CLIP_results/ViT-L-14_inc_scores_100_samples.csv',
         'ViT-B-16-quickgelu': 'CLIP_results/ViT-B-16-quickgelu_inc_scores_100_samples.csv',
         'ViT-L-14-quickgelu': 'CLIP_results/ViT-L-14-quickgelu_inc_scores_100_samples.csv',
     },
@@ -103,7 +115,12 @@ def generate_depth_lineplots(model_family, exp_name, results_dir):
     else:
         exp_title = "Underspecification"
 
-    plt.title(f"Average Similarity Score by Caption for {model_family} for {exp_title} Proof of Concept")
+    if model_family == "clip_and_clip-quickgelu":
+        model_title = "clip and clip-quickgelu"
+    else:
+        model_title = model_family
+
+    plt.title(f"Average Similarity Score by Caption for {model_title} for {exp_title} Proof of Concept")
     plt.xlabel(f"{exp_title} Type")
     plt.ylabel("Average Similarity Score")
     plt.ylim(0, 1.1)
@@ -125,7 +142,7 @@ def main():
 
     parser = ArgumentParser(prog=f'{sys.argv[0]}', description=desc)
     parser.add_argument('exp', type=str.lower, choices=['und', 'inc'], help=help_exp)
-    parser.add_argument('family', type=str.lower, choices=['clip', 'clip-quickgelu', 'siglip', 'siglip2', 'radio'], help=help_model)
+    parser.add_argument('family', type=str.lower, choices=['clip', 'clip-quickgelu', 'clip_and_clip-quickgelu', 'siglip', 'siglip2', 'radio'], help=help_model)
     
     args = vars(parser.parse_args())
     exp = args.get('exp')
