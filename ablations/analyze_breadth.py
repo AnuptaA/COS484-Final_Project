@@ -109,12 +109,90 @@ def generate_heatmap_of_differences(exp_name, avg_mat_path, results_dir):
     
 #----------------------------------------------------------------------#
 
+def generate_averages_for_und_and_inc():
+    sim_cols = [
+        'sim_original',
+        'sim_quantity',
+        'sim_location',
+        'sim_object',
+        'sim_gender-number',
+        'sim_gender',
+        'sim_full'
+    ]
+
+    und_averages = pd.DataFrame(index=UND_CSV_DIRECTORIES.keys(), columns=sim_cols)
+    for model_name, csv_path in UND_CSV_DIRECTORIES.items():
+        df = pd.read_csv(os.path.join(f"und_results", csv_path))
+        for col in sim_cols:
+            vals = df[col].dropna()
+            vals = vals[vals != 0]
+            mean_val = vals.mean() if not vals.empty else float('nan')
+            und_averages.loc[model_name, col] = mean_val
+    und_averages = und_averages.astype(float)
+    out_csv = os.path.join('both_analysis', 'breadth_und_caption_averages.csv')
+    und_averages.to_csv(out_csv)
+    print(f"Saved und matrix to {out_csv}")
+
+    inc_averages = pd.DataFrame(index=INC_CSV_DIRECTORIES.keys(), columns=sim_cols)
+    for model_name, csv_path in INC_CSV_DIRECTORIES.items():
+        df = pd.read_csv(os.path.join(f"inc_results", csv_path))
+        for col in sim_cols:
+            vals = df[col].dropna()
+            vals = vals[vals != 0]
+            mean_val = vals.mean() if not vals.empty else float('nan')
+            inc_averages.loc[model_name, col] = mean_val
+    inc_averages = inc_averages.astype(float)
+    out_csv = os.path.join('both_analysis', 'breadth_inc_caption_averages.csv')
+    inc_averages.to_csv(out_csv)
+    print(f"Saved inc matrix to {out_csv}")
+
+#----------------------------------------------------------------------#
+    
+def generate_heatmap_of_und_and_inc():
+    cols = {
+        'Quantity': 'sim_quantity',
+        'Location': 'sim_location',
+        'Object': 'sim_object',
+        'Gender-Number': 'sim_gender-number',
+        'Gender': 'sim_gender',
+        'Full': 'sim_full'
+    }
+
+    und_averages = pd.read_csv(os.path.join('both_analysis', 'breadth_und_caption_averages.csv'), index_col=0)
+    inc_averages = pd.read_csv(os.path.join('both_analysis', 'breadth_inc_caption_averages.csv'), index_col=0)
+    differences_matrix = pd.DataFrame(index=und_averages.index, columns=cols)
+
+    for model_name in und_averages.index:
+        for col, sim_col in cols.items():
+            differences_matrix.loc[model_name, col] = und_averages.loc[model_name, sim_col] - inc_averages.loc[model_name, sim_col]
+
+    differences_matrix = differences_matrix.astype(float)
+
+    plt.figure(figsize=(10, 6))
+    sns.heatmap(differences_matrix, annot=True, cmap='coolwarm', center=0, fmt=".3f")
+
+    plt.title(f"Mean Similarity Difference of Underspecification and Incorrectness by Model and Alteration Type", pad=20, fontsize=12)
+    plt.xlabel(f"Caption Alteration Type", labelpad=15, fontsize=12)
+    plt.ylabel("Model", labelpad=15, fontsize=12)
+
+    plt.xticks(rotation=30)
+    plt.yticks(rotation=0)
+
+    plt.tight_layout()
+
+    out_png = os.path.join('both_analysis', 'breadth_und_and_inc_differences_heatmap.png')
+    plt.savefig(out_png)
+    plt.close()
+    print(f"Saved heatmap to {out_png}")
+    
+#----------------------------------------------------------------------#
+
 def main():
     desc = "Helper module for analyzing CSVs with heatmap"
     help_exp = "the proof of concept experiment to be analyzed"
 
     parser = ArgumentParser(prog=f'{sys.argv[0]}', description=desc)
-    parser.add_argument('exp', type=str.lower, choices=['und', 'inc'], help=help_exp)
+    parser.add_argument('exp', type=str.lower, choices=['und', 'inc', 'both'], help=help_exp)
     
     args = vars(parser.parse_args())
     exp = args.get('exp')
@@ -123,8 +201,13 @@ def main():
     avg_mat_path = exp + "_analysis/breadth_caption_averages.csv"
 
     print(f"Generating breadth heatmap for {exp} proof of concept.")
-    generate_averages_for_captions(exp, output_dir)
-    generate_heatmap_of_differences(exp, avg_mat_path, output_dir)
+
+    if exp == "both":
+        generate_averages_for_und_and_inc()
+        generate_heatmap_of_und_and_inc()
+    else:
+        generate_averages_for_captions(exp, output_dir)
+        generate_heatmap_of_differences(exp, avg_mat_path, output_dir)
 
 #----------------------------------------------------------------------#
 
