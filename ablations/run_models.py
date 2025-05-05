@@ -18,7 +18,7 @@ from torch.nn import functional as F
 MODEL_PARAMS = {
     'clip': {
         'MODELS': [
-            # 'ViT-B-32', # used by Sandro Pezzelle but different resolution so unused
+            'ViT-B-32', # model used by Pezzelle, but wrong resolution, comment out for ablations
             'ViT-B-16', # breadth + depth (224)
             'ViT-B-16-quickgelu', # bread + depth
             'ViT-L-14', # depth
