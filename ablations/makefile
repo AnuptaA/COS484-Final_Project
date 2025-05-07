@@ -14,6 +14,7 @@ run_models: run_und run_inc
 generate_violin_plots: generate_und_violin_plots generate_inc_violin_plots
 
 analyze_breadth: analyze_und_breadth analyze_inc_breadth
+	python analyze_breadth.py both map
 
 analyze_depth: analyze_und_depth analyze_inc_depth
 
@@ -33,11 +34,13 @@ generate_und_violin_plots: und_analysis
 	python generate_violin_plots.py und siglip2
 
 analyze_und_breadth: und_analysis
-	python analyze_breadth.py und
+	python analyze_breadth.py und map
+	python analyze_breadth.py und plot
 
 analyze_und_depth: und_analysis
 	python analyze_depth.py und clip
 	python analyze_depth.py und clip-quickgelu
+	python analyze_depth.py und clip_and_clip-quickgelu
 	python analyze_depth.py und siglip
 	python analyze_depth.py und siglip2
 	python analyze_depth.py und radio
@@ -58,11 +61,13 @@ generate_inc_violin_plots: inc_analysis
 	python generate_violin_plots.py inc siglip2
 
 analyze_inc_breadth: inc_analysis
-	python analyze_breadth.py inc
+	python analyze_breadth.py inc map
+	python analyze_breadth.py inc plot
 
 analyze_inc_depth: inc_analysis
 	python analyze_depth.py inc clip
 	python analyze_depth.py inc clip-quickgelu
+	python analyze_depth.py inc clip_and_clip-quickgelu
 	python analyze_depth.py inc siglip
 	python analyze_depth.py inc siglip2
 	python analyze_depth.py inc radio
@@ -121,3 +126,5 @@ clean:
 	# rm -f inc_analysis/radio/*.png # [COMMENTED OUT], confirm and then uncomment to delete
 	rm -f inc_analysis/*.csv
 	rm -f inc_analysis/*.png
+	rm -f both_analysis/*.csv
+	rm -f both_analysis/*.png

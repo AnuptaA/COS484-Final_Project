@@ -184,25 +184,75 @@ def generate_heatmap_of_und_and_inc():
     plt.savefig(out_png)
     plt.close()
     print(f"Saved heatmap to {out_png}")
+
+#----------------------------------------------------------------------#
+    
+def generate_plot(exp_name, avg_mat_path, results_dir):
+    cols = {
+        'sim_original': 'Original',
+        'sim_quantity': 'Quantity',
+        'sim_location': 'Location',
+        'sim_object': 'Object',
+        'sim_gender-number': 'Gender-Number',
+        'sim_gender': 'Gender',
+        'sim_full': 'Full'
+    }
+
+    averages_matrix = pd.read_csv(avg_mat_path, index_col=0)
+
+    plt.figure(figsize=(10, 6))
+    for model_name in averages_matrix.index:
+        averages = averages_matrix.loc[model_name]
+        plt.plot([cols[col] for col in cols], averages, marker='o', label=model_name)
+
+    if exp_name == "inc":
+        exp_title = "Incorrectness"
+    else:
+        exp_title = "Underspecification"
+
+    plt.title(f"Average Similarity Score by Caption for all Model Families for {exp_title} Proof of Concept")
+    plt.xlabel(f"{exp_title} Type")
+    plt.ylabel("Average Similarity Score")
+    plt.ylim(0, 1.1)
+    plt.legend(title="Model")
+    plt.grid(True)
+    plt.tight_layout()
+
+    out_png = os.path.join(results_dir, f'breadth_similarity_for_all.png')
+    plt.savefig(out_png)
+    plt.close()
+    print(f"Saved lineplot to {out_png}")
     
 #----------------------------------------------------------------------#
 
 def main():
     desc = "Helper module for analyzing CSVs with heatmap"
     help_exp = "the proof of concept experiment to be analyzed"
+    help_out = "the plot being generated"
 
     parser = ArgumentParser(prog=f'{sys.argv[0]}', description=desc)
     parser.add_argument('exp', type=str.lower, choices=['und', 'inc', 'both'], help=help_exp)
+    parser.add_argument('out', type=str.lower, choices=['plot', 'map'], help=help_out)
     
     args = vars(parser.parse_args())
     exp = args.get('exp')
+    out = args.get('out')
 
     output_dir = exp + "_analysis"
     avg_mat_path = exp + "_analysis/breadth_caption_averages.csv"
 
-    print(f"Generating breadth heatmap for {exp} proof of concept.")
+    print(f"Generating breadth {out} for {exp} proof of concept.")
 
-    if exp == "both":
+    if out == "plot":
+        if exp == "both":
+            generate_averages_for_captions("und", "und_analysis")
+            generate_plot("und", "und_analysis/breadth_caption_averages.csv", "und_analysis")
+            generate_averages_for_captions("inc", "inc_analysis")
+            generate_plot("inc", "inc_analysis/breadth_caption_averages.csv", "inc_analysis")
+        else:
+            generate_averages_for_captions(exp, output_dir)
+            generate_plot(exp, avg_mat_path, output_dir)
+    elif exp == "both":
         generate_averages_for_und_and_inc()
         generate_heatmap_of_und_and_inc()
     else:
