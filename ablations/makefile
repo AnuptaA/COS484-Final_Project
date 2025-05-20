@@ -23,7 +23,7 @@ analyze_depth: analyze_und_depth analyze_inc_depth
 # Commands for running the first proof of concept.
 run_und: und_results
 	python run_models.py und clip
-	python run_models.py und radio
+	# python run_models.py und radio # [COMMENTED OUT], confirm and then uncomment to run
 	python run_models.py und siglip
 	python run_models.py und siglip2
 
@@ -50,7 +50,7 @@ analyze_und_depth: und_analysis
 # Commands for running the second proof of concept.
 run_inc: inc_results
 	python run_models.py inc clip
-	python run_models.py inc radio
+	# python run_models.py inc radio # [COMMENTED OUT], confirm and then uncomment to run
 	python run_models.py inc siglip
 	python run_models.py inc siglip2
 

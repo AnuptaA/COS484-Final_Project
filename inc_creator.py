@@ -62,7 +62,7 @@ the sentence might change to "Four men are having a basketball game at the house
     return response.choices[0].message.content.strip()
 
 # train data pre-processing
-df = pd.read_csv('paper/clip_UND_scores_100_samples.csv')
+df = pd.read_csv('sunglass/clip_UND_scores_100_samples.csv')
 inc = df[["imageURL","imageID","original"]]
 
 # Iterate over each row in the DataFrame with a delay
